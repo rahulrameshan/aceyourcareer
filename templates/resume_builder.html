@@ -1,0 +1,420 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NZPS11NC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9NZPS11NC1');
+</script>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/logo/loder.png' %}">
+    <meta name="viewport" content="width=device-width,initial-scale=.5,maximum-scale=5,minimum-scale=.25,user-scalable=yes">
+    <link rel="canonical" href="https://rxresu.me/">
+    <meta name="google-site-verification" content="tF42LXDm9IVlubpb9blnct55r0usS2Z9vm-smbPnxNk">
+    <meta name="theme-color" content="#546e7a">
+    <meta name="description" content="A one-of-a-kind resume builder that's not out to get your data. Completely secure, customizable, portable, open-source and free forever. Try it out today!">
+    <link rel="apple-touch-icon" href="/logo192.png">
+
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Reactive Resume">
+    <meta property="og:description" content="A one-of-a-kind resume builder that's not out to get your data. Completely secure, customizable, portable, open-source and free forever. Try it out today!">
+    <meta property="og:image" content="https://i.imgur.com/6gDAIu0.png">
+    <meta property="og:url" content="https://rxresu.me/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@amruthpillai">
+    <title>Ace Your Career: Resume Builder</title>
+
+    <!--  <link href="https://rx-resume.web.app/static/css/main.85aca08c.chunk.css" rel="stylesheet"> -->
+    <link href="{% static 'resume_static/chunk.css' %}" rel="stylesheet">
+    <link href="{% static 'resume_static/chunk2.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+
+
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.997.0" data-gr-ext-installed="" style="font-family: 'Montserrat'"><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" style="font-family: 'Montserrat'">
+        <div class="h-screen grid grid-cols-5 items-center" style="font-family: 'Montserrat'">
+            <div id="leftSidebar" class="animated slideInLeft z-10 py-6 h-screen bg-white col-span-1 shadow-2xl overflow-y-scroll">
+                <div class="mx-4 mb-6 flex items-center">
+                    <div class="flex mr-1 cursor-pointer select-none text-gray-600 hover:text-gray-800"><i class="material-icons">chevron_left</i></div>
+                    <ul id="tabs" class="flex overflow-x-scroll list-none">
+                        <li class="mx-1 list-none">
+                            <div class="whitespace-no-wrap bg-gray-700 text-white rounded-md text-sm py-2 px-6 font-medium">Profile</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Objective</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Work Experience</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Education</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Honors &amp; Awards</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Certifications</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Skills</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Hobbies</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Languages</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">References</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Personal Information</div>
+                        </li>
+                    </ul>
+                    <div class="flex ml-1 cursor-pointer select-none text-gray-600 hover:text-gray-800"><i class="material-icons">chevron_right</i></div>
+                </div>
+                <div class="px-6">
+                    <div>
+                        <div class="w-full flex flex-col mb-6"><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Heading" value="Profile"></div>
+                        <hr class="my-6">
+                        <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Photo URL</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                type="text" placeholder="https://i.imgur.com/..." value=""></div>
+                        <div class="grid grid-cols-2 col-gap-4">
+                            <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">First Name</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    type="text" placeholder="Jane" value=""></div>
+                            <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Last Name</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    type="text" placeholder="Doe" value=""></div>
+                        </div>
+                        <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Subtitle</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                type="text" placeholder="Full-Stack Web Developer" value=""></div>
+                        <hr class="my-6">
+                        <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Address Line 1</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                type="text" placeholder="Palladium Complex" value=""></div>
+                        <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Address Line 2</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                type="text" placeholder="140 E 14th St" value=""></div>
+                        <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Address Line 3</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                type="text" placeholder="New York, NY 10003 USA" value=""></div>
+                        <hr class="my-6">
+                        <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Phone Number</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                type="text" placeholder="+1 541 754 3010" value=""></div>
+                        <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Website</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                type="text" placeholder="janedoe.me" value=""></div>
+                        <div class="w-full flex flex-col mb-6"><label class="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">Email Address</label><input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                type="text" placeholder="jane.doe@example.com" value=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-10 h-screen overflow-hidden col-span-3 flex justify-center items-center">
+                <div tabindex="0" style="cursor: pointer; outline: none;">
+                    <div style="display: inline-block; transform-origin: 0px 0px 0px; transform: matrix(0.699736, 0, 0, 0.699736, 119.055, 168.705); transition: all 0.1s linear 0s; will-change: transform;">
+                        <div id="page" class="shadow-2xl break-words">
+                            <div class="p-10" style="background-color: rgb(255, 255, 255); color: rgb(33, 33, 33);">
+                                <div class="grid grid-cols-4 items-center">
+                                    <div class="col-span-3 flex items-center">
+                                        <div>
+                                            <h1 class="font-bold text-4xl" style="color: rgb(244, 67, 54);"> </h1>
+                                            <h6 class="font-medium text-sm"></h6>
+                                            <div class="flex flex-col mt-4 text-xs"><span></span><span></span><span></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-1 text-xs"></div>
+                                </div>
+                                <hr class="my-6">
+                                <div>
+                                    <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Objective</h6>
+                                    <div class="text-sm"></div>
+                                </div>
+                                <div>
+                                    <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Work Experience</h6>
+                                </div>
+                                <div>
+                                    <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Education</h6>
+                                </div>
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div>
+                                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Honors &amp; Awards</h6>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Certifications</h6>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div>
+                                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Skills</h6>
+                                        <div class="mt-1 flex flex-wrap"></div>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Hobbies</h6>
+                                        <div class="mt-1 flex flex-wrap"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">References</h6>
+                                    <div class="grid grid-cols-3 gap-6"></div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div>
+                                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Personal Information</h6>
+                                        <table class="table-auto">
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Languages</h6>
+                                        <div class="w-3/4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pageController" class="absolute z-20 opacity-75 hover:opacity-100 transition-all duration-150">
+                    <div class="text-2xl px-8 border border-gray-200 rounded-full bg-white flex justify-center items-center leading-none select-none">
+                        <div class="p-3 hover:bg-gray-200 cursor-pointer flex"><i class="material-icons">zoom_in</i></div>
+                        <div class="p-3 hover:bg-gray-200 cursor-pointer flex"><i class="material-icons">zoom_out</i></div>
+                        <div class="p-3 hover:bg-gray-200 cursor-pointer flex"><i class="material-icons">center_focus_strong</i></div>
+                        <div class="text-gray-400 p-3">|</div>
+                        <div class="p-3 hover:bg-gray-200 cursor-pointer flex"><i class="material-icons">print</i></div>
+                        <div class="p-3 hover:bg-gray-200 cursor-pointer flex"><i class="material-icons">save</i></div>
+                        <div class="text-gray-400 p-3">|</div><a class="p-3 hover:bg-gray-200 cursor-pointer flex" href="https://docs.rxresu.me/" target="_blank" rel="noopener noreferrer"><i class="material-icons">help_outline</i></a></div>
+                </div>
+            </div>
+            <div id="printPage" class="break-words">
+                <div class="p-10" style="background-color: rgb(255, 255, 255); color: rgb(33, 33, 33);">
+                    <div class="grid grid-cols-4 items-center">
+                        <div class="col-span-3 flex items-center">
+                            <div>
+                                <h1 class="font-bold text-4xl" style="color: rgb(244, 67, 54);"> </h1>
+                                <h6 class="font-medium text-sm"></h6>
+                                <div class="flex flex-col mt-4 text-xs"><span></span><span></span><span></span></div>
+                            </div>
+                        </div>
+                        <div class="col-span-1 text-xs"></div>
+                    </div>
+                    <hr class="my-6">
+                    <div>
+                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Objective</h6>
+                        <div class="text-sm"></div>
+                    </div>
+                    <div>
+                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Work Experience</h6>
+                    </div>
+                    <div>
+                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Education</h6>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Honors &amp; Awards</h6>
+                        </div>
+                        <div>
+                            <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Certifications</h6>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Skills</h6>
+                            <div class="mt-1 flex flex-wrap"></div>
+                        </div>
+                        <div>
+                            <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Hobbies</h6>
+                            <div class="mt-1 flex flex-wrap"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">References</h6>
+                        <div class="grid grid-cols-3 gap-6"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Personal Information</h6>
+                            <table class="table-auto">
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <h6 class="text-xs font-bold uppercase mt-6 mb-2" style="color: rgb(244, 67, 54);">Languages</h6>
+                            <div class="w-3/4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightSidebar" class="animated slideInRight z-10 py-6 h-screen bg-white col-span-1 shadow-2xl overflow-y-scroll">
+                <div class="mx-4 mb-6 flex items-center">
+                    <div class="flex mr-1 cursor-pointer select-none text-gray-600 hover:text-gray-800"><i class="material-icons">chevron_left</i></div>
+                    <ul id="tabs" class="flex overflow-x-scroll list-none">
+                        <li class="mx-1 list-none">
+                            <div class="whitespace-no-wrap bg-gray-700 text-white rounded-md text-sm py-2 px-6 font-medium">Templates</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Colors</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Fonts</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Actions</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">Settings</div>
+                        </li>
+                        <li class="mx-1 list-none">
+                            <div class="bg-white whitespace-no-wrap rounded-md cursor-pointer text-sm py-2 px-6 font-medium hover:bg-gray-200">About</div>
+                        </li>
+                    </ul>
+                    <div class="flex ml-1 cursor-pointer select-none text-gray-600 hover:text-gray-800"><i class="material-icons">chevron_right</i></div>
+                </div>
+                <div class="px-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center"><img class="rounded cursor-pointer object-cover border shadow hover:shadow-md border-gray-600 hover:border-gray-600 hover:border-gray-500 cursor-pointer" src="preview.a5fc2f27.png" alt="Onyx">
+                            <p class="mt-1 text-sm font-medium">Onyx</p>
+                        </div>
+                        <div class="text-center"><img class="rounded cursor-pointer object-cover border shadow hover:shadow-md border-transparent  hover:border-gray-500 cursor-pointer" src="https://rx-resume.web.app/static/media/preview.f1f46a82.png" alt="Pikachu">
+                            <p class="mt-1 text-sm font-medium">Pikachu</p>
+                        </div>
+                        <div class="text-center"><img class="rounded cursor-pointer object-cover border shadow hover:shadow-md border-transparent  hover:border-gray-500 cursor-pointer" src="https://rx-resume.web.app/static/media/preview.27f7a093.png" alt="Gengar">
+                            <p class="mt-1 text-sm font-medium">Gengar</p>
+                        </div>
+                        <div class="text-center"><img class="rounded cursor-pointer object-cover border shadow hover:shadow-md border-transparent  hover:border-gray-500 cursor-pointer" src="https://rx-resume.web.app/static/media/preview.115df124.png" alt="Castform">
+                            <p class="mt-1 text-sm font-medium">Castform</p>
+                        </div>
+                        <div class="text-center"><img class="rounded cursor-pointer object-cover border shadow hover:shadow-md border-transparent  hover:border-gray-500 cursor-pointer" src="https://rx-resume.web.app/static/media/preview.93d6587b.png" alt="Glalie">
+                            <p class="mt-1 text-sm font-medium">Glalie</p>
+                        </div>
+                        <div class="text-center"><img class="rounded cursor-pointer object-cover border shadow hover:shadow-md border-transparent  hover:border-gray-500 cursor-pointer" src="https://rx-resume.web.app/static/media/preview.3186944c.png" alt="Celebi">
+                            <p class="mt-1 text-sm font-medium">Celebi</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="centered absolute inset-0 w-1/4 mt-24 transition-all duration-1000 ease-in-out opacity-0 z-0">
+                <div class="px-12 rounded-lg shadow-2xl bg-white"><video src="https://chinmay-bharti.herokuapp.com/static/resume_static/pan-zoom.mp4" autoplay="" loop=""></video>
+                    <p class="px-6 pb-6 text-sm text-gray-800 font-medium text-center">You can pan and zoom around the artboard at any time to get a closer look at your resume.</p>
+                </div>
+            </div>
+            <div class="absolute inset-0 transition-all duration-200 ease-in-out opacity-0 z-0" style="background-color: rgba(0, 0, 0, 0.25);">
+                <div class="centered py-8 px-12 bg-white shadow-xl rounded w-full md:w-1/3">
+                    <h5 class="mb-6 text-lg font-bold">Download Your Resume</h5>
+                    <h6 class="mb-1 text-sm font-medium">Quality</h6>
+                    <div class="flex items-center"><input type="range" class="w-full h-4 my-2 rounded-full overflow-hidden appearance-none focus:outline-none bg-gray-400" min="40" max="100" step="5" value="80">
+                        <h6 class="font-medium pl-5">80%</h6>
+                    </div>
+                    <h6 class="mt-4 mb-2 text-sm font-medium">Type</h6>
+                    <div class="flex flex-col mb-2">
+                        <div class="inline-flex relative w-full bg-gray-200 text-gray-800 rounded py-3 px-4 leading-tight focus:outline-none"><select class="block appearance-none w-full bg-gray-200 text-gray-800 focus:outline-none"><option value="unconstrained">Unconstrained</option><option value="fitInA4">Fit in A4</option><option value="multiPageA4">Multi-Page A4</option></select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex justify-center items-center px-2 bg-gray-200"><i class="material-icons">expand_more</i></div>
+                        </div>
+                    </div>
+                    <p class="my-3 text-xs text-gray-600">This export method makes use of HTML canvas to convert the resume to an image and print it on a PDF, which means it will lose all selecting/parsing capabilities.</p>
+                    <p class="my-3 text-xs text-gray-600">If that is important to you, please try printing the resume instead, using Cmd/Ctrl + P or the print button below. The result may vary as the output is browser dependent, but it is known to work best on the latest version of Google
+                        Chrome.
+                    </p>
+                    <div class="flex justify-between"><button type="button" class="mt-6 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white text-sm font-medium py-2 px-5 rounded"><div class="flex justify-center items-center"><i class="material-icons mr-2 font-bold text-base">close</i><span class="text-sm">Cancel</span></div></button>
+                        <button type="button" class="mt-6 border border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white text-sm font-medium py-2 px-5 rounded">
+                        <div class="flex justify-center items-center"><i class="material-icons mr-2 font-bold text-base">save</i><span class="text-sm">Save as PDF</span></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        ! function(e) {
+            function r(r) {
+                for (var n, i, l = r[0], a = r[1], f = r[2], p = 0, s = []; p < l.length; p++) i = l[p], Object.prototype.hasOwnProperty.call(o, i) && o[i] && s.push(o[i][0]), o[i] = 0;
+                for (n in a) Object.prototype.hasOwnProperty.call(a, n) && (e[n] = a[n]);
+                for (c && c(r); s.length;) s.shift()();
+                return u.push.apply(u, f || []), t()
+            }
+
+            function t() {
+                for (var e, r = 0; r < u.length; r++) {
+                    for (var t = u[r], n = !0, l = 1; l < t.length; l++) {
+                        var a = t[l];
+                        0 !== o[a] && (n = !1)
+                    }
+                    n && (u.splice(r--, 1), e = i(i.s = t[0]))
+                }
+                return e
+            }
+            var n = {},
+                o = {
+                    1: 0
+                },
+                u = [];
+
+            function i(r) {
+                if (n[r]) return n[r].exports;
+                var t = n[r] = {
+                    i: r,
+                    l: !1,
+                    exports: {}
+                };
+                return e[r].call(t.exports, t, t.exports, i), t.l = !0, t.exports
+            }
+            i.m = e, i.c = n, i.d = function(e, r, t) {
+                i.o(e, r) || Object.defineProperty(e, r, {
+                    enumerable: !0,
+                    get: t
+                })
+            }, i.r = function(e) {
+                "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                    value: "Module"
+                }), Object.defineProperty(e, "__esModule", {
+                    value: !0
+                })
+            }, i.t = function(e, r) {
+                if (1 & r && (e = i(e)), 8 & r) return e;
+                if (4 & r && "object" == typeof e && e && e.__esModule) return e;
+                var t = Object.create(null);
+                if (i.r(t), Object.defineProperty(t, "default", {
+                        enumerable: !0,
+                        value: e
+                    }), 2 & r && "string" != typeof e)
+                    for (var n in e) i.d(t, n, function(r) {
+                        return e[r]
+                    }.bind(null, n));
+                return t
+            }, i.n = function(e) {
+                var r = e && e.__esModule ? function() {
+                    return e.default
+                } : function() {
+                    return e
+                };
+                return i.d(r, "a", r), r
+            }, i.o = function(e, r) {
+                return Object.prototype.hasOwnProperty.call(e, r)
+            }, i.p = "/";
+            var l = this["webpackJsonpreactive-resume"] = this["webpackJsonpreactive-resume"] || [],
+                a = l.push.bind(l);
+            l.push = r, l = l.slice();
+            for (var f = 0; f < l.length; f++) r(l[f]);
+            var c = a;
+            t()
+        }([])
+    </script>
+
+    <script src="{% static 'resume_static/chunk2.js' %}"></script>
+
+    <!--<script src="{% static 'resume_static/chunk.js' %}"></script>-->
+
+    <script src="{% static 'resume_static/chunk_final.js' %}"></script>
+
+
+</body>
+
+</html>

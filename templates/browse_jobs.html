@@ -1,0 +1,15 @@
+{% load static %}
+<p>Displaying content</p>
+{% for result in data %}
+<div>
+  <h1>{{ result.company.name }}</h1>
+  <h3>
+    {% with result.categories|first as first_cat %}{{ first_cat.name }}{% endwith %}
+  </h3>
+  <h3>{{result.name}}</h3>
+  <h3>
+    {% with result.levels|first as first_lev %}{{ first_lev.name }}{% endwith %}
+  </h3>
+  <a href={{result.refs.landing_page}}> Apply for the job</a>
+</div>
+{% endfor %}

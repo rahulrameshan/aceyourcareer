@@ -1,0 +1,2810 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NZPS11NC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9NZPS11NC1');
+</script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ace Your Career - Jobs</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/logo/loder.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'assets2/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/css/slicknav.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets2/css/style.css' %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid ">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="."><img src="{% static 'assets/img/logo/loder.png' %}" alt="" style="width: 100px; height: 100px; background-color: white;"></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href=".">home</a></li>
+                                            <li><a href="about">About</a></li>
+                                            
+                                            <li><a href="#">Tools <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="resume_builder">Resume builder </a></li>
+                                                    <li><a href="cover_letter">Cover letter builder</a></li>
+                                               <li><a href="resume_review">Resume optimizer</a></li> 
+                                                  
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact">Contacts</a></li>
+                                            <li><a href="#">Jobs</a></li>
+                                           
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    <div class="phone_num d-none d-xl-block">
+                                        <a href="#">Hi Chinmay</a>
+                                    </div>
+                                    <div class="d-none d-lg-block">
+                                        <a class="boxed-btn3" href="#">Log Out</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>100k+ Jobs Available</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <!-- job_listing_area_start  -->
+    <div class="job_listing_area plus_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="job_filter white-bg">
+                        <div class="form_inner white-bg">
+                            <h3>Filter</h3>
+                            <form action="browse_jobs" method="POST" id="browse_jobs" name="browse_jobs">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <!--
+                                    <div class="col-lg-12">
+                                        <div class="single_field">
+                                            <input type="text" placeholder="Search keyword">
+                                        </div>
+                                    </div>
+                                -->
+                                    <div class="col-lg-12">
+                                        <div class="single_field">
+                                            <input id="job_category" name="job_category" list="brow" placeholder='Category: {{context_dictionary.category}} ' required>
+                                            <datalist id="brow" >
+  
+    <option value="Accounting">Accounting</option>
+    <option value="Account Management/Customer Success">Account Management/Customer Success</option>
+    <option value="Corporate">Corporate</option>
+    <option value="Customer Service Career">Customer Service Career</option>
+    <option value="Data Science">Data Science</option>
+    <option value="Design">Design</option>
+    <option value="Editor">Editor</option>
+    <option value="Education">Education</option>
+    <option value="HR">HR</option>
+    <option value="IT">IT</option>
+    <option value="Law">Law</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Mechanic">Mechanic</option>
+    <option value="Mental Health">Mental Health</option>
+    <option value="Nurses">Nurses</option>
+    <option value="Office Administration">Office Administration</option>
+    <option value="Physical Assistant">Physical Assistant</option>
+    <option value="Product">Product</option>
+    <option value="Project Management">Project Management</option>
+    <option value="Public Relations">Public Relations</option>
+    <option value="Recruiting">Recruiting</option>
+    <option value="Retail">Retail</option>
+    <option value="Sales">Sales</option>
+    <option value="Software Engineer">Software Engineer</option>
+    <option value="UX">UX</option>
+    <option value="Videography">Videography</option>
+    <option value="Writer">Writer</option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="single_field">
+                                            <input id="exp_level" name="exp_level" list="brow4" placeholder="Experience: {{context_dictionary.level}} " required>
+                                            <datalist id="brow4" >
+    <option value="entry Level">entry Level</option>
+    <option value="mid Level">mid Level</option>
+    <option value="senior Level">senior Level</option>
+    <option value="management">management</option>
+    <option value="internship">internship</option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="single_field">
+                                            <input id="location" name="location" list="brow3" placeholder="Location: {{context_dictionary.location}} " required>
+                                            <datalist id="brow3" >
+    
+<option value="Abhayāpuri, India">Abhayāpuri, India</option>
+<option value="Abohar, India">Abohar, India</option>
+<option value="Abrama, India">Abrama, India</option>
+<option value="Ābu, India">Ābu, India</option>
+<option value="Ābu Road, India">Ābu Road, India</option>
+<option value="Achalpur, India">Achalpur, India</option>
+<option value="Achhnera, India">Achhnera, India</option>
+<option value="Ādampur, India">Ādampur, India</option>
+<option value="Addanki, India">Addanki, India</option>
+<option value="Ādilābād, India">Ādilābād, India</option>
+<option value="Adirampattinam, India">Adirampattinam, India</option>
+<option value="Ādoni, India">Ādoni, India</option>
+<option value="Adra, India">Adra, India</option>
+<option value="Adūr, India">Adūr, India</option>
+<option value="Afzalgarh, India">Afzalgarh, India</option>
+<option value="Afzalpur, India">Afzalpur, India</option>
+<option value="Agar, India">Agar, India</option>
+<option value="Agartala, India">Agartala, India</option>
+<option value="Agra, India">Agra, India</option>
+<option value="Ahmadnagar, India">Ahmadnagar, India</option>
+<option value="Ahmadpur, India">Ahmadpur, India</option>
+<option value="Ahmedabad, India">Ahmedabad, India</option>
+<option value="Ahraura, India">Ahraura, India</option>
+<option value="Aistala, India">Aistala, India</option>
+<option value="Aizawl, India">Aizawl, India</option>
+<option value="Ajmer, India">Ajmer, India</option>
+<option value="Ajnāla, India">Ajnāla, India</option>
+<option value="Ajodhya, India">Ajodhya, India</option>
+<option value="Ajra, India">Ajra, India</option>
+<option value="Akalkot, India">Akalkot, India</option>
+<option value="Akaltara, India">Akaltara, India</option>
+<option value="Akbarpur, India">Akbarpur, India</option>
+<option value="Akivīdu, India">Akivīdu, India</option>
+<option value="Akkarampalle, India">Akkarampalle, India</option>
+<option value="Aklera, India">Aklera, India</option>
+<option value="Akola, India">Akola, India</option>
+<option value="Akot, India">Akot, India</option>
+<option value="Aland, India">Aland, India</option>
+<option value="Alangāyam, India">Alangāyam, India</option>
+<option value="Ālangulam, India">Ālangulam, India</option>
+<option value="Alībāg, India">Alībāg, India</option>
+<option value="Alīganj, India">Alīganj, India</option>
+<option value="Alīgarh, India">Alīgarh, India</option>
+<option value="Alīpur Duār, India">Alīpur Duār, India</option>
+<option value="Alīpur, India">Alīpur, India</option>
+<option value="Allahābād, India">Allahābād, India</option>
+<option value="Alleppey, India">Alleppey, India</option>
+<option value="Almora, India">Almora, India</option>
+<option value="Alnāvar, India">Alnāvar, India</option>
+<option value="Along, India">Along, India</option>
+<option value="Alot, India">Alot, India</option>
+<option value="Aluva, India">Aluva, India</option>
+<option value="Alwar, India">Alwar, India</option>
+<option value="Alwaye, India">Alwaye, India</option>
+<option value="Amalāpuram, India">Amalāpuram, India</option>
+<option value="Amalner, India">Amalner, India</option>
+<option value="Amarnāth, India">Amarnāth, India</option>
+<option value="Amarpātan, India">Amarpātan, India</option>
+<option value="Amarpur, India">Amarpur, India</option>
+<option value="Ambad, India">Ambad, India</option>
+<option value="Ambāh, India">Ambāh, India</option>
+<option value="Ambājogāi, India">Ambājogāi, India</option>
+<option value="Ambāla, India">Ambāla, India</option>
+<option value="Ambasamudram, India">Ambasamudram, India</option>
+<option value="Ambikāpur, India">Ambikāpur, India</option>
+<option value="Ambur, India">Ambur, India</option>
+<option value="Amet, India">Amet, India</option>
+<option value="Āmlāgora, India">Āmlāgora, India</option>
+<option value="Amla, India">Amla, India</option>
+<option value="Āmli, India">Āmli, India</option>
+<option value="Amod, India">Amod, India</option>
+<option value="Amrāvati, India">Amrāvati, India</option>
+<option value="Amreli, India">Amreli, India</option>
+<option value="Amritsar, India">Amritsar, India</option>
+<option value="Amroha, India">Amroha, India</option>
+<option value="Amroli, India">Amroli, India</option>
+<option value="Āmta, India">Āmta, India</option>
+<option value="Amudālavalasa, India">Amudālavalasa, India</option>
+<option value="Anakāpalle, India">Anakāpalle, India</option>
+<option value="Anamalais, India">Anamalais, India</option>
+<option value="Anand, India">Anand, India</option>
+<option value="Anandpur, India">Anandpur, India</option>
+<option value="Anantapur, India">Anantapur, India</option>
+<option value="Anantnag, India">Anantnag, India</option>
+<option value="Āndippatti, India">Āndippatti, India</option>
+<option value="Andol, India">Andol, India</option>
+<option value="Anekal, India">Anekal, India</option>
+<option value="Angamāli, India">Angamāli, India</option>
+<option value="Angul, India">Angul, India</option>
+<option value="Anjad, India">Anjad, India</option>
+<option value="Anjangaon, India">Anjangaon, India</option>
+<option value="Anjār, India">Anjār, India</option>
+<option value="Ankleshwar, India">Ankleshwar, India</option>
+<option value="Annigeri, India">Annigeri, India</option>
+<option value="Annur, India">Annur, India</option>
+<option value="Anshing, India">Anshing, India</option>
+<option value="Anta, India">Anta, India</option>
+<option value="Anthiyur, India">Anthiyur, India</option>
+<option value="Anūpgarh, India">Anūpgarh, India</option>
+<option value="Anūppur, India">Anūppur, India</option>
+<option value="Anūpshahr, India">Anūpshahr, India</option>
+<option value="Aonla, India">Aonla, India</option>
+<option value="Arakkonam, India">Arakkonam, India</option>
+<option value="Arāmbāgh, India">Arāmbāgh, India</option>
+<option value="Ārangaon, India">Ārangaon, India</option>
+<option value="Arang, India">Arang, India</option>
+<option value="Arantāngi, India">Arantāngi, India</option>
+<option value="Arāria, India">Arāria, India</option>
+<option value="Arcot, India">Arcot, India</option>
+<option value="Ariyalūr, India">Ariyalūr, India</option>
+<option value="Arkalgūd, India">Arkalgūd, India</option>
+<option value="Arni, India">Arni, India</option>
+<option value="Āron, India">Āron, India</option>
+<option value="Aroor, India">Aroor, India</option>
+<option value="Arrah, India">Arrah, India</option>
+<option value="Arsikere, India">Arsikere, India</option>
+<option value="Arukutti, India">Arukutti, India</option>
+<option value="Arumuganeri, India">Arumuganeri, India</option>
+<option value="Aruppukkottai, India">Aruppukkottai, India</option>
+<option value="Ārvi, India">Ārvi, India</option>
+<option value="Āsandh, India">Āsandh, India</option>
+<option value="Āsansol, India">Āsansol, India</option>
+<option value="Ashoknagar, India">Ashoknagar, India</option>
+<option value="Ashoknagar Kalyangarh, India">Ashoknagar Kalyangarh, India</option>
+<option value="Ashta, India">Ashta, India</option>
+<option value="Asifābād, India">Asifābād, India</option>
+<option value="Āsika, India">Āsika, India</option>
+<option value="Āsind, India">Āsind, India</option>
+<option value="Atarra, India">Atarra, India</option>
+<option value="Āthagarh, India">Āthagarh, India</option>
+<option value="Athni, India">Athni, India</option>
+<option value="Atmakūr, India">Atmakūr, India</option>
+<option value="Atraulī, India">Atraulī, India</option>
+<option value="Attili, India">Attili, India</option>
+<option value="Attingal, India">Attingal, India</option>
+<option value="Attur, India">Attur, India</option>
+<option value="Aurād, India">Aurād, India</option>
+<option value="Auraiya, India">Auraiya, India</option>
+<option value="Aurangabad, India">Aurangabad, India</option>
+<option value="Aurangābād, India">Aurangābād, India</option>
+<option value="Ausa, India">Ausa, India</option>
+<option value="Avanigadda, India">Avanigadda, India</option>
+<option value="Avinashi, India">Avinashi, India</option>
+<option value="Ayakudi, India">Ayakudi, India</option>
+<option value="Azamgarh, India">Azamgarh, India</option>
+<option value="Bābai, India">Bābai, India</option>
+<option value="Baberu, India">Baberu, India</option>
+<option value="Babīna, India">Babīna, India</option>
+<option value="Bābra, India">Bābra, India</option>
+<option value="Babrāla, India">Babrāla, India</option>
+<option value="Bachhraon, India">Bachhraon, India</option>
+<option value="Bada Barabīl, India">Bada Barabīl, India</option>
+<option value="Badagara, India">Badagara, India</option>
+<option value="Bādāmi, India">Bādāmi, India</option>
+<option value="Baddi, India">Baddi, India</option>
+<option value="Badlapur, India">Badlapur, India</option>
+<option value="Badnāwar, India">Badnāwar, India</option>
+<option value="Badūria, India">Badūria, India</option>
+<option value="Badvel, India">Badvel, India</option>
+<option value="Bagaha, India">Bagaha, India</option>
+<option value="Bagalkot, India">Bagalkot, India</option>
+<option value="Bagar, India">Bagar, India</option>
+<option value="Bagasra, India">Bagasra, India</option>
+<option value="Bagdogra, India">Bagdogra, India</option>
+<option value="Bāgepalli, India">Bāgepalli, India</option>
+<option value="Bāgha Purāna, India">Bāgha Purāna, India</option>
+<option value="Bāghpat, India">Bāghpat, India</option>
+<option value="Bagulā, India">Bagulā, India</option>
+<option value="Bahādurganj, India">Bahādurganj, India</option>
+<option value="Bahādurgarh, India">Bahādurgarh, India</option>
+<option value="Baharampur, India">Baharampur, India</option>
+<option value="Baheri, India">Baheri, India</option>
+<option value="Bāh, India">Bāh, India</option>
+<option value="Bahjoi, India">Bahjoi, India</option>
+<option value="Bahraigh, India">Bahraigh, India</option>
+<option value="Bahula, India">Bahula, India</option>
+<option value="Baidyabāti, India">Baidyabāti, India</option>
+<option value="Baihar, India">Baihar, India</option>
+<option value="Bail-Hongal, India">Bail-Hongal, India</option>
+<option value="Bairāgnia, India">Bairāgnia, India</option>
+<option value="Baj Baj, India">Baj Baj, India</option>
+<option value="Bakhtiyārpur, India">Bakhtiyārpur, India</option>
+<option value="Bālāchor, India">Bālāchor, India</option>
+<option value="Bālāghāt, India">Bālāghāt, India</option>
+<option value="Balāngīr, India">Balāngīr, India</option>
+<option value="Bālāpur, India">Bālāpur, India</option>
+<option value="Balarāmpur, India">Balarāmpur, India</option>
+<option value="Balasore, India">Balasore, India</option>
+<option value="Bāli, India">Bāli, India</option>
+<option value="Ballālpur, India">Ballālpur, India</option>
+<option value="Baloda Bāzār, India">Baloda Bāzār, India</option>
+<option value="Balod, India">Balod, India</option>
+<option value="Bālotra, India">Bālotra, India</option>
+<option value="Balrāmpur, India">Balrāmpur, India</option>
+<option value="Bālugaon, India">Bālugaon, India</option>
+<option value="Bālurghāt, India">Bālurghāt, India</option>
+<option value="Bāmor Kalān, India">Bāmor Kalān, India</option>
+<option value="Bānapur, India">Bānapur, India</option>
+<option value="Banat, India">Banat, India</option>
+<option value="Banda, India">Banda, India</option>
+<option value="Bānda, India">Bānda, India</option>
+<option value="Bāndīkūi, India">Bāndīkūi, India</option>
+<option value="Bandipura, India">Bandipura, India</option>
+<option value="Banga, India">Banga, India</option>
+<option value="Bangalore, India">Bangalore, India</option>
+<option value="Banganapalle, India">Banganapalle, India</option>
+<option value="Bangaon, India">Bangaon, India</option>
+<option value="Bāngarmau, India">Bāngarmau, India</option>
+<option value="Bānka, India">Bānka, India</option>
+<option value="Bānki, India">Bānki, India</option>
+<option value="Bānkura, India">Bānkura, India</option>
+<option value="Banmankhi, India">Banmankhi, India</option>
+<option value="Bannūr, India">Bannūr, India</option>
+<option value="Bānsbāria, India">Bānsbāria, India</option>
+<option value="Bānsdīh, India">Bānsdīh, India</option>
+<option value="Bānsi, India">Bānsi, India</option>
+<option value="Bānswāda, India">Bānswāda, India</option>
+<option value="Bānswāra, India">Bānswāra, India</option>
+<option value="Bāntva, India">Bāntva, India</option>
+<option value="Bantvāl, India">Bantvāl, India</option>
+<option value="Banūr, India">Banūr, India</option>
+<option value="Bāpatla, India">Bāpatla, India</option>
+<option value="Bārākpur, India">Bārākpur, India</option>
+<option value="Bārāmati, India">Bārāmati, India</option>
+<option value="Bāramūla, India">Bāramūla, India</option>
+<option value="Bārān, India">Bārān, India</option>
+<option value="Bārāsat, India">Bārāsat, India</option>
+<option value="Bara Uchāna, India">Bara Uchāna, India</option>
+<option value="Barauli, India">Barauli, India</option>
+<option value="Baraut, India">Baraut, India</option>
+<option value="Bar Bigha, India">Bar Bigha, India</option>
+<option value="Barbil, India">Barbil, India</option>
+<option value="Barddhamān, India">Barddhamān, India</option>
+<option value="Bārdoli, India">Bārdoli, India</option>
+<option value="Bareilly, India">Bareilly, India</option>
+<option value="Bargarh, India">Bargarh, India</option>
+<option value="Bargi, India">Bargi, India</option>
+<option value="Bārh, India">Bārh, India</option>
+<option value="Barhiya, India">Barhiya, India</option>
+<option value="Bāri, India">Bāri, India</option>
+<option value="Bari Sādri, India">Bari Sādri, India</option>
+<option value="Barjala, India">Barjala, India</option>
+<option value="Barkā Kānā, India">Barkā Kānā, India</option>
+<option value="Barki Saria, India">Barki Saria, India</option>
+<option value="Bārmer, India">Bārmer, India</option>
+<option value="Barnāla, India">Barnāla, India</option>
+<option value="Baroda, India">Baroda, India</option>
+<option value="Barpāli, India">Barpāli, India</option>
+<option value="Barpeta, India">Barpeta, India</option>
+<option value="Barpeta Road, India">Barpeta Road, India</option>
+<option value="Bārsi, India">Bārsi, India</option>
+<option value="Bāruipur, India">Bāruipur, India</option>
+<option value="Bāruni, India">Bāruni, India</option>
+<option value="Barwāla, India">Barwāla, India</option>
+<option value="Barwāni, India">Barwāni, India</option>
+<option value="Basavakalyān, India">Basavakalyān, India</option>
+<option value="Basavana Bāgevādi, India">Basavana Bāgevādi, India</option>
+<option value="Basi, India">Basi, India</option>
+<option value="Basmat, India">Basmat, India</option>
+<option value="Basni, India">Basni, India</option>
+<option value="Bāsoda, India">Bāsoda, India</option>
+<option value="Bastī, India">Bastī, India</option>
+<option value="Bāsudebpur, India">Bāsudebpur, India</option>
+<option value="Baswa, India">Baswa, India</option>
+<option value="Batāla, India">Batāla, India</option>
+<option value="Bathinda, India">Bathinda, India</option>
+<option value="Baud, India">Baud, India</option>
+<option value="Bawāna, India">Bawāna, India</option>
+<option value="Bayāna, India">Bayāna, India</option>
+<option value="Bāzpur, India">Bāzpur, India</option>
+<option value="Beāwar, India">Beāwar, India</option>
+<option value="Bedi, India">Bedi, India</option>
+<option value="Begamganj, India">Begamganj, India</option>
+<option value="Begūn, India">Begūn, India</option>
+<option value="Begusarai, India">Begusarai, India</option>
+<option value="Behat, India">Behat, India</option>
+<option value="Behror, India">Behror, India</option>
+<option value="Bela, India">Bela, India</option>
+<option value="Beldānga, India">Beldānga, India</option>
+<option value="Belgaum, India">Belgaum, India</option>
+<option value="Bellampalli, India">Bellampalli, India</option>
+<option value="Bellary, India">Bellary, India</option>
+<option value="Belonia, India">Belonia, India</option>
+<option value="Belsand, India">Belsand, India</option>
+<option value="Belūr, India">Belūr, India</option>
+<option value="Bemetāra, India">Bemetāra, India</option>
+<option value="Bengaluru, India">Bengaluru, India</option>
+<option value="Beohāri, India">Beohāri, India</option>
+<option value="Berasia, India">Berasia, India</option>
+<option value="Beri Khās, India">Beri Khās, India</option>
+<option value="Betamcherla, India">Betamcherla, India</option>
+<option value="Bettiah, India">Bettiah, India</option>
+<option value="Betūl, India">Betūl, India</option>
+<option value="Bewar, India">Bewar, India</option>
+<option value="Beypore, India">Beypore, India</option>
+<option value="Bhabhua, India">Bhabhua, India</option>
+<option value="Bhachāu, India">Bhachāu, India</option>
+<option value="Bhādāsar, India">Bhādāsar, India</option>
+<option value="Bhadaur, India">Bhadaur, India</option>
+<option value="Bhadohi, India">Bhadohi, India</option>
+<option value="Bhadrāchalam, India">Bhadrāchalam, India</option>
+<option value="Bhādra, India">Bhādra, India</option>
+<option value="Bhadrakh, India">Bhadrakh, India</option>
+<option value="Bhadrāvati, India">Bhadrāvati, India</option>
+<option value="Bhadreswar, India">Bhadreswar, India</option>
+<option value="Bhāgalpur, India">Bhāgalpur, India</option>
+<option value="Bhainsdehi, India">Bhainsdehi, India</option>
+<option value="Bhaisa, India">Bhaisa, India</option>
+<option value="Bhālki, India">Bhālki, India</option>
+<option value="Bhandāra, India">Bhandāra, India</option>
+<option value="Bhānder, India">Bhānder, India</option>
+<option value="Bhanjanagar, India">Bhanjanagar, India</option>
+<option value="Bhānpura, India">Bhānpura, India</option>
+<option value="Bhānpurī, India">Bhānpurī, India</option>
+<option value="Bhānvad, India">Bhānvad, India</option>
+<option value="Bharatpur, India">Bharatpur, India</option>
+<option value="Bharthana, India">Bharthana, India</option>
+<option value="Bharūch, India">Bharūch, India</option>
+<option value="Bharwāri, India">Bharwāri, India</option>
+<option value="Bhasāwar, India">Bhasāwar, India</option>
+<option value="Bhātāpāra, India">Bhātāpāra, India</option>
+<option value="Bhatkal, India">Bhatkal, India</option>
+<option value="Bhātpāra, India">Bhātpāra, India</option>
+<option value="Bhattiprolu, India">Bhattiprolu, India</option>
+<option value="Bhavāni, India">Bhavāni, India</option>
+<option value="Bhavnagar, India">Bhavnagar, India</option>
+<option value="Bhawāniganj, India">Bhawāniganj, India</option>
+<option value="Bhawānīgarh, India">Bhawānīgarh, India</option>
+<option value="Bhawānipatna, India">Bhawānipatna, India</option>
+<option value="Bhawanipur, India">Bhawanipur, India</option>
+<option value="Bhayandar, India">Bhayandar, India</option>
+<option value="Bhāyāvadar, India">Bhāyāvadar, India</option>
+<option value="Bhikangaon, India">Bhikangaon, India</option>
+<option value="Bhīkhi, India">Bhīkhi, India</option>
+<option value="Bhilai, India">Bhilai, India</option>
+<option value="Bhīlwāra, India">Bhīlwāra, India</option>
+<option value="Bhīmavaram, India">Bhīmavaram, India</option>
+<option value="Bhīmunipatnam, India">Bhīmunipatnam, India</option>
+<option value="Bhindār, India">Bhindār, India</option>
+<option value="Bhind, India">Bhind, India</option>
+<option value="Bhinga, India">Bhinga, India</option>
+<option value="Bhīnmāl, India">Bhīnmāl, India</option>
+<option value="Bhitarwār, India">Bhitarwār, India</option>
+<option value="Bhiwadi, India">Bhiwadi, India</option>
+<option value="Bhiwandi, India">Bhiwandi, India</option>
+<option value="Bhiwāni, India">Bhiwāni, India</option>
+<option value="Bhogpur, India">Bhogpur, India</option>
+<option value="Bhongaon, India">Bhongaon, India</option>
+<option value="Bhongīr, India">Bhongīr, India</option>
+<option value="Bhopal, India">Bhopal, India</option>
+<option value="Bhor, India">Bhor, India</option>
+<option value="Bhubaneshwar, India">Bhubaneshwar, India</option>
+<option value="Bhuban, India">Bhuban, India</option>
+<option value="Bhudgaon, India">Bhudgaon, India</option>
+<option value="Bhuj, India">Bhuj, India</option>
+<option value="Bhūm, India">Bhūm, India</option>
+<option value="Bhusāval, India">Bhusāval, India</option>
+<option value="Biaora, India">Biaora, India</option>
+<option value="Bīdar, India">Bīdar, India</option>
+<option value="Bidhūna, India">Bidhūna, India</option>
+<option value="Bihārīganj, India">Bihārīganj, India</option>
+<option value="Bihār Sharīf, India">Bihār Sharīf, India</option>
+<option value="Bijapur, India">Bijapur, India</option>
+<option value="Bijāwar, India">Bijāwar, India</option>
+<option value="Bijbehara, India">Bijbehara, India</option>
+<option value="Bijnor, India">Bijnor, India</option>
+<option value="Bīkaner, India">Bīkaner, India</option>
+<option value="Bikramganj, India">Bikramganj, India</option>
+<option value="Bilāra, India">Bilāra, India</option>
+<option value="Bilāri, India">Bilāri, India</option>
+<option value="Bilāsipāra, India">Bilāsipāra, India</option>
+<option value="Bilāspur, India">Bilāspur, India</option>
+<option value="Bīlāspur, India">Bīlāspur, India</option>
+<option value="Bilgi, India">Bilgi, India</option>
+<option value="Bilgrām, India">Bilgrām, India</option>
+<option value="Bilhaur, India">Bilhaur, India</option>
+<option value="Bilimora, India">Bilimora, India</option>
+<option value="Bilsanda, India">Bilsanda, India</option>
+<option value="Bilsi, India">Bilsi, India</option>
+<option value="Bilthra, India">Bilthra, India</option>
+<option value="Bindki, India">Bindki, India</option>
+<option value="Binka, India">Binka, India</option>
+<option value="Birmitrapur, India">Birmitrapur, India</option>
+<option value="Birpara, India">Birpara, India</option>
+<option value="Bīrpur, India">Bīrpur, India</option>
+<option value="Birūr, India">Birūr, India</option>
+<option value="Bīsalpur, India">Bīsalpur, India</option>
+<option value="Bisauli, India">Bisauli, India</option>
+<option value="Bishnupur, India">Bishnupur, India</option>
+<option value="Bissāu, India">Bissāu, India</option>
+<option value="Biswān, India">Biswān, India</option>
+<option value="Bobbili, India">Bobbili, India</option>
+<option value="Bodhan, India">Bodhan, India</option>
+<option value="Bodināyakkanūr, India">Bodināyakkanūr, India</option>
+<option value="Boisar, India">Boisar, India</option>
+<option value="Bokajān, India">Bokajān, India</option>
+<option value="Bokāro, India">Bokāro, India</option>
+<option value="Bolpur, India">Bolpur, India</option>
+<option value="Bongaigaon, India">Bongaigaon, India</option>
+<option value="Borsad, India">Borsad, India</option>
+<option value="Botād, India">Botād, India</option>
+<option value="Bowringpet, India">Bowringpet, India</option>
+<option value="Brahmapur, India">Brahmapur, India</option>
+<option value="Brājarājnagar, India">Brājarājnagar, India</option>
+<option value="Budaun, India">Budaun, India</option>
+<option value="Buddh Gaya, India">Buddh Gaya, India</option>
+<option value="Budhāna, India">Budhāna, India</option>
+<option value="Budhlāda, India">Budhlāda, India</option>
+<option value="Bulandshahr, India">Bulandshahr, India</option>
+<option value="Buldāna, India">Buldāna, India</option>
+<option value="Būndi, India">Būndi, India</option>
+<option value="Būndu, India">Būndu, India</option>
+<option value="Burhānpur, India">Burhānpur, India</option>
+<option value="Burhar, India">Burhar, India</option>
+<option value="Burla, India">Burla, India</option>
+<option value="Buxar, India">Buxar, India</option>
+<option value="Byādgi, India">Byādgi, India</option>
+<option value="Byndoor, India">Byndoor, India</option>
+<option value="Calangute, India">Calangute, India</option>
+<option value="Calcutta, India">Calcutta, India</option>
+<option value="Canning, India">Canning, India</option>
+<option value="Chāībāsa, India">Chāībāsa, India</option>
+<option value="Chākan, India">Chākan, India</option>
+<option value="Chākia, India">Chākia, India</option>
+<option value="Chaklāsi, India">Chaklāsi, India</option>
+<option value="Chakradharpur, India">Chakradharpur, India</option>
+<option value="Chaksu, India">Chaksu, India</option>
+<option value="Chalāla, India">Chalāla, India</option>
+<option value="Chālisgaon, India">Chālisgaon, India</option>
+<option value="Challakere, India">Challakere, India</option>
+<option value="Challapalle, India">Challapalle, India</option>
+<option value="Chamba, India">Chamba, India</option>
+<option value="Chāmpa, India">Chāmpa, India</option>
+<option value="Chamrajnagar, India">Chamrajnagar, India</option>
+<option value="Chānasma, India">Chānasma, India</option>
+<option value="Chānda, India">Chānda, India</option>
+<option value="Chandannagar, India">Chandannagar, India</option>
+<option value="Chandauli, India">Chandauli, India</option>
+<option value="Chanderi, India">Chanderi, India</option>
+<option value="Chandigarh, India">Chandigarh, India</option>
+<option value="Chāndor, India">Chāndor, India</option>
+<option value="Chāndpur, India">Chāndpur, India</option>
+<option value="Chandrakona, India">Chandrakona, India</option>
+<option value="Chanduasi, India">Chanduasi, India</option>
+<option value="Chāndūr Bāzār, India">Chāndūr Bāzār, India</option>
+<option value="Chāndur, India">Chāndur, India</option>
+<option value="Chāndūr, India">Chāndūr, India</option>
+<option value="Changanācheri, India">Changanācheri, India</option>
+<option value="Channagiri, India">Channagiri, India</option>
+<option value="Channapatna, India">Channapatna, India</option>
+<option value="Channarāyapatna, India">Channarāyapatna, India</option>
+<option value="Chāpar, India">Chāpar, India</option>
+<option value="Chāpra, India">Chāpra, India</option>
+<option value="Charkhāri, India">Charkhāri, India</option>
+<option value="Charkhi Dādri, India">Charkhi Dādri, India</option>
+<option value="Charthāwal, India">Charthāwal, India</option>
+<option value="Chās, India">Chās, India</option>
+<option value="Chatrā, India">Chatrā, India</option>
+<option value="Chatrapur, India">Chatrapur, India</option>
+<option value="Chemmumiahpet, India">Chemmumiahpet, India</option>
+<option value="Chengam, India">Chengam, India</option>
+<option value="Chengannūr, India">Chengannūr, India</option>
+<option value="Chennai, India">Chennai, India</option>
+<option value="Chennimalai, India">Chennimalai, India</option>
+<option value="Cherpulassery, India">Cherpulassery, India</option>
+<option value="Cherthala, India">Cherthala, India</option>
+<option value="Chettipālaiyam, India">Chettipālaiyam, India</option>
+<option value="Chetwayi, India">Chetwayi, India</option>
+<option value="Cheyyar, India">Cheyyar, India</option>
+<option value="Chhabra, India">Chhabra, India</option>
+<option value="Chhala, India">Chhala, India</option>
+<option value="Chhāpar, India">Chhāpar, India</option>
+<option value="Chhaprauli, India">Chhaprauli, India</option>
+<option value="Chharra, India">Chharra, India</option>
+<option value="Chhāta, India">Chhāta, India</option>
+<option value="Chhātāpur, India">Chhātāpur, India</option>
+<option value="Chhatarpur, India">Chhatarpur, India</option>
+<option value="Chhibrāmau, India">Chhibrāmau, India</option>
+<option value="Chhindwāra, India">Chhindwāra, India</option>
+<option value="Chhota Udepur, India">Chhota Udepur, India</option>
+<option value="Chhoti Sādri, India">Chhoti Sādri, India</option>
+<option value="Chicacole, India">Chicacole, India</option>
+<option value="Chicholi, India">Chicholi, India</option>
+<option value="Chidambaram, India">Chidambaram, India</option>
+<option value="Chidawa, India">Chidawa, India</option>
+<option value="Chik Ballāpur, India">Chik Ballāpur, India</option>
+<option value="Chikhli, India">Chikhli, India</option>
+<option value="Chikmagalūr, India">Chikmagalūr, India</option>
+<option value="Chiknāyakanhalli, India">Chiknāyakanhalli, India</option>
+<option value="Chikodi, India">Chikodi, India</option>
+<option value="Chilakalūrupet, India">Chilakalūrupet, India</option>
+<option value="Chillupār, India">Chillupār, India</option>
+<option value="Chincholi, India">Chincholi, India</option>
+<option value="Chingleput, India">Chingleput, India</option>
+<option value="Chinnachowk, India">Chinnachowk, India</option>
+<option value="Chinnamanūr, India">Chinnamanūr, India</option>
+<option value="Chinna Salem, India">Chinna Salem, India</option>
+<option value="Chintāmani, India">Chintāmani, India</option>
+<option value="Chiplūn, India">Chiplūn, India</option>
+<option value="Chīpurupalle, India">Chīpurupalle, India</option>
+<option value="Chīrāla, India">Chīrāla, India</option>
+<option value="Chītāpur, India">Chītāpur, India</option>
+<option value="Chitradurga, India">Chitradurga, India</option>
+<option value="Chittaranjan, India">Chittaranjan, India</option>
+<option value="Chittaurgarh, India">Chittaurgarh, India</option>
+<option value="Chittūr, India">Chittūr, India</option>
+<option value="Chodavaram, India">Chodavaram, India</option>
+<option value="Chopda, India">Chopda, India</option>
+<option value="Chotila, India">Chotila, India</option>
+<option value="Chunār, India">Chunār, India</option>
+<option value="Churāchāndpur, India">Churāchāndpur, India</option>
+<option value="Chūru, India">Chūru, India</option>
+<option value="Clement Town, India">Clement Town, India</option>
+<option value="Closepet, India">Closepet, India</option>
+<option value="Cochin, India">Cochin, India</option>
+<option value="Coimbatore, India">Coimbatore, India</option>
+<option value="Colachel, India">Colachel, India</option>
+<option value="Colgong, India">Colgong, India</option>
+<option value="Colonelganj, India">Colonelganj, India</option>
+<option value="Contai, India">Contai, India</option>
+<option value="Coondapoor, India">Coondapoor, India</option>
+<option value="Cuddalore, India">Cuddalore, India</option>
+<option value="Cuddapah, India">Cuddapah, India</option>
+<option value="Cumbum, India">Cumbum, India</option>
+<option value="Cuncolim, India">Cuncolim, India</option>
+<option value="Curchorem, India">Curchorem, India</option>
+<option value="Cuttack, India">Cuttack, India</option>
+<option value="Dabhoi, India">Dabhoi, India</option>
+<option value="Daboh, India">Daboh, India</option>
+<option value="Dabra, India">Dabra, India</option>
+<option value="Dabwāli, India">Dabwāli, India</option>
+<option value="Dādri, India">Dādri, India</option>
+<option value="Dāhānu, India">Dāhānu, India</option>
+<option value="Dahegām, India">Dahegām, India</option>
+<option value="Dākor, India">Dākor, India</option>
+<option value="Dalkola, India">Dalkola, India</option>
+<option value="Dalsingh Sarai, India">Dalsingh Sarai, India</option>
+<option value="Daltonganj, India">Daltonganj, India</option>
+<option value="Daman, India">Daman, India</option>
+<option value="Dāmnagar, India">Dāmnagar, India</option>
+<option value="Damoh, India">Damoh, India</option>
+<option value="Dandeli, India">Dandeli, India</option>
+<option value="Darbhanga, India">Darbhanga, India</option>
+<option value="Dārjiling, India">Dārjiling, India</option>
+<option value="Dārwha, India">Dārwha, India</option>
+<option value="Daryāpur, India">Daryāpur, India</option>
+<option value="Dāsna, India">Dāsna, India</option>
+<option value="Dasnapur, India">Dasnapur, India</option>
+<option value="Dasūya, India">Dasūya, India</option>
+<option value="Dātāganj, India">Dātāganj, India</option>
+<option value="Datia, India">Datia, India</option>
+<option value="Dattāpur, India">Dattāpur, India</option>
+<option value="Daudnagar, India">Daudnagar, India</option>
+<option value="Daund, India">Daund, India</option>
+<option value="Dausa, India">Dausa, India</option>
+<option value="Davangere, India">Davangere, India</option>
+<option value="Dehra Dūn, India">Dehra Dūn, India</option>
+<option value="Dehri, India">Dehri, India</option>
+<option value="Denkanikota, India">Denkanikota, India</option>
+<option value="Deoband, India">Deoband, India</option>
+<option value="Deogarh, India">Deogarh, India</option>
+<option value="Deolāli, India">Deolāli, India</option>
+<option value="Deoli, India">Deoli, India</option>
+<option value="Deoraniān, India">Deoraniān, India</option>
+<option value="Deoria, India">Deoria, India</option>
+<option value="Deori Khās, India">Deori Khās, India</option>
+<option value="Depālpur, India">Depālpur, India</option>
+<option value="Deshnoke, India">Deshnoke, India</option>
+<option value="Deūlgaon Rāja, India">Deūlgaon Rāja, India</option>
+<option value="Devakottai, India">Devakottai, India</option>
+<option value="Devanhalli, India">Devanhalli, India</option>
+<option value="Devarkonda, India">Devarkonda, India</option>
+<option value="Devgadh Bāriya, India">Devgadh Bāriya, India</option>
+<option value="Devgarh, India">Devgarh, India</option>
+<option value="Dewas, India">Dewas, India</option>
+<option value="Dhāka, India">Dhāka, India</option>
+<option value="Dhāmnod, India">Dhāmnod, India</option>
+<option value="Dhāmpur, India">Dhāmpur, India</option>
+<option value="Dhamtari, India">Dhamtari, India</option>
+<option value="Dhanaula, India">Dhanaula, India</option>
+<option value="Dhanaura, India">Dhanaura, India</option>
+<option value="Dhanbād, India">Dhanbād, India</option>
+<option value="Dhandhuka, India">Dhandhuka, India</option>
+<option value="Dhanera, India">Dhanera, India</option>
+<option value="Dharampur, India">Dharampur, India</option>
+<option value="Dharamsala, India">Dharamsala, India</option>
+<option value="Dharangaon, India">Dharangaon, India</option>
+<option value="Dharapuram, India">Dharapuram, India</option>
+<option value="Dhāri, India">Dhāri, India</option>
+<option value="Dhār, India">Dhār, India</option>
+<option value="Dhāriwāl, India">Dhāriwāl, India</option>
+<option value="Dharmābād, India">Dharmābād, India</option>
+<option value="Dharmadam, India">Dharmadam, India</option>
+<option value="Dharmanagar, India">Dharmanagar, India</option>
+<option value="Dharmapuri, India">Dharmapuri, India</option>
+<option value="Dharmavaram, India">Dharmavaram, India</option>
+<option value="Dhāruhera, India">Dhāruhera, India</option>
+<option value="Dhārūr, India">Dhārūr, India</option>
+<option value="Dhaulpur, India">Dhaulpur, India</option>
+<option value="Dhaurahra, India">Dhaurahra, India</option>
+<option value="Dhekiajuli, India">Dhekiajuli, India</option>
+<option value="Dhenkānāl, India">Dhenkānāl, India</option>
+<option value="Dhing, India">Dhing, India</option>
+<option value="Dholka, India">Dholka, India</option>
+<option value="Dhone, India">Dhone, India</option>
+<option value="Dhorāji, India">Dhorāji, India</option>
+<option value="Dhrāngadhra, India">Dhrāngadhra, India</option>
+<option value="Dhrol, India">Dhrol, India</option>
+<option value="Dhuburi, India">Dhuburi, India</option>
+<option value="Dhūlia, India">Dhūlia, India</option>
+<option value="Dhuliān, India">Dhuliān, India</option>
+<option value="Dhupgāri, India">Dhupgāri, India</option>
+<option value="Dhūri, India">Dhūri, India</option>
+<option value="Diamond Harbour, India">Diamond Harbour, India</option>
+<option value="Dibai, India">Dibai, India</option>
+<option value="Dibrugarh, India">Dibrugarh, India</option>
+<option value="Dicholi, India">Dicholi, India</option>
+<option value="Dīdwāna, India">Dīdwāna, India</option>
+<option value="Digboi, India">Digboi, India</option>
+<option value="Dighwāra, India">Dighwāra, India</option>
+<option value="Dīg, India">Dīg, India</option>
+<option value="Dīglūr, India">Dīglūr, India</option>
+<option value="Digras, India">Digras, India</option>
+<option value="Dimāpur, India">Dimāpur, India</option>
+<option value="Dīnānagar, India">Dīnānagar, India</option>
+<option value="Dinapore, India">Dinapore, India</option>
+<option value="Dindigul, India">Dindigul, India</option>
+<option value="Dindori, India">Dindori, India</option>
+<option value="Dīnhāta, India">Dīnhāta, India</option>
+<option value="Diphu, India">Diphu, India</option>
+<option value="Dīsa, India">Dīsa, India</option>
+<option value="Diu, India">Diu, India</option>
+<option value="Doda, India">Doda, India</option>
+<option value="Dod Ballāpur, India">Dod Ballāpur, India</option>
+<option value="Dohad, India">Dohad, India</option>
+<option value="Dombivli, India">Dombivli, India</option>
+<option value="Dondaicha, India">Dondaicha, India</option>
+<option value="Dongargarh, India">Dongargarh, India</option>
+<option value="Dorāha, India">Dorāha, India</option>
+<option value="Dornakal, India">Dornakal, India</option>
+<option value="Dubrājpur, India">Dubrājpur, India</option>
+<option value="Dugda, India">Dugda, India</option>
+<option value="Duliāgaon, India">Duliāgaon, India</option>
+<option value="Dum Duma, India">Dum Duma, India</option>
+<option value="Dumka, India">Dumka, India</option>
+<option value="Dumra, India">Dumra, India</option>
+<option value="Dumraon, India">Dumraon, India</option>
+<option value="Dūngarpur, India">Dūngarpur, India</option>
+<option value="Durgapur, India">Durgapur, India</option>
+<option value="Durgāpur, India">Durgāpur, India</option>
+<option value="Durg, India">Durg, India</option>
+<option value="Dwārka, India">Dwārka, India</option>
+<option value="Egra, India">Egra, India</option>
+<option value="Elamanchili, India">Elamanchili, India</option>
+<option value="Ellenabad, India">Ellenabad, India</option>
+<option value="Ellore, India">Ellore, India</option>
+<option value="Elūr, India">Elūr, India</option>
+<option value="Emmiganūr, India">Emmiganūr, India</option>
+<option value="Erandol, India">Erandol, India</option>
+<option value="Erāttupetta, India">Erāttupetta, India</option>
+<option value="Erode, India">Erode, India</option>
+<option value="Erraguntla, India">Erraguntla, India</option>
+<option value="Etāwah, India">Etāwah, India</option>
+<option value="Etāwa, India">Etāwa, India</option>
+<option value="Faizpur, India">Faizpur, India</option>
+<option value="Fālākāta, India">Fālākāta, India</option>
+<option value="Farakka, India">Farakka, India</option>
+<option value="Faridabad, India">Faridabad, India</option>
+<option value="Farīdkot, India">Farīdkot, India</option>
+<option value="Farīdpur, India">Farīdpur, India</option>
+<option value="Farrukhābād, India">Farrukhābād, India</option>
+<option value="Farrukhnagar, India">Farrukhnagar, India</option>
+<option value="Fatehābād, India">Fatehābād, India</option>
+<option value="Fatehganj West, India">Fatehganj West, India</option>
+<option value="Fatehgarh Chūriān, India">Fatehgarh Chūriān, India</option>
+<option value="Fatehpur, India">Fatehpur, India</option>
+<option value="Fatehpur Sīkri, India">Fatehpur Sīkri, India</option>
+<option value="Fatwa, India">Fatwa, India</option>
+<option value="Fāzilka, India">Fāzilka, India</option>
+<option value="Ferokh, India">Ferokh, India</option>
+<option value="Ferozepore, India">Ferozepore, India</option>
+<option value="Fīrozābād, India">Fīrozābād, India</option>
+<option value="Fīrozpur Jhirka, India">Fīrozpur Jhirka, India</option>
+<option value="Forbesganj, India">Forbesganj, India</option>
+<option value="Fort Gloster, India">Fort Gloster, India</option>
+<option value="French Rocks, India">French Rocks, India</option>
+<option value="Fyzābād, India">Fyzābād, India</option>
+<option value="Gadag, India">Gadag, India</option>
+<option value="Gādarwāra, India">Gādarwāra, India</option>
+<option value="Gadhada, India">Gadhada, India</option>
+<option value="Gadhinglaj, India">Gadhinglaj, India</option>
+<option value="Gadwāl, India">Gadwāl, India</option>
+<option value="Gajendragarh, India">Gajendragarh, India</option>
+<option value="Gajraula, India">Gajraula, India</option>
+<option value="Gajuwaka, India">Gajuwaka, India</option>
+<option value="Gāndarbal, India">Gāndarbal, India</option>
+<option value="Gandevi, India">Gandevi, India</option>
+<option value="Gāndhīdhām, India">Gāndhīdhām, India</option>
+<option value="Gangākher, India">Gangākher, India</option>
+<option value="Gangānagar, India">Gangānagar, India</option>
+<option value="Gangāpur, India">Gangāpur, India</option>
+<option value="Gangārāmpur, India">Gangārāmpur, India</option>
+<option value="Gangāwati, India">Gangāwati, India</option>
+<option value="Gangoh, India">Gangoh, India</option>
+<option value="Gangolli, India">Gangolli, India</option>
+<option value="Gangtok, India">Gangtok, India</option>
+<option value="Ganj Dundwāra, India">Ganj Dundwāra, India</option>
+<option value="Gannavaram, India">Gannavaram, India</option>
+<option value="Garhākota, India">Garhākota, India</option>
+<option value="Garhmuktesar, India">Garhmuktesar, India</option>
+<option value="Garhshankar, India">Garhshankar, India</option>
+<option value="Garhwa, India">Garhwa, India</option>
+<option value="Gariadhar, India">Gariadhar, India</option>
+<option value="Gauripur, India">Gauripur, India</option>
+<option value="Gaya, India">Gaya, India</option>
+<option value="Gevrai, India">Gevrai, India</option>
+<option value="Ghandinagar, India">Ghandinagar, India</option>
+<option value="Gharaunda, India">Gharaunda, India</option>
+<option value="Ghātāl, India">Ghātāl, India</option>
+<option value="Ghātampur, India">Ghātampur, India</option>
+<option value="Ghātanji, India">Ghātanji, India</option>
+<option value="Ghatkesar, India">Ghatkesar, India</option>
+<option value="Ghātsīla, India">Ghātsīla, India</option>
+<option value="Ghāziābād, India">Ghāziābād, India</option>
+<option value="Ghazīpur, India">Ghazīpur, India</option>
+<option value="Ghosī, India">Ghosī, India</option>
+<option value="Ghoti Budrukh, India">Ghoti Budrukh, India</option>
+<option value="Ghugus, India">Ghugus, India</option>
+<option value="Giddalūr, India">Giddalūr, India</option>
+<option value="Giddarbāha, India">Giddarbāha, India</option>
+<option value="Gingee, India">Gingee, India</option>
+<option value="Gīrīdīh, India">Gīrīdīh, India</option>
+<option value="Goālpāra, India">Goālpāra, India</option>
+<option value="Gobārdānga, India">Gobārdānga, India</option>
+<option value="Gobichettipalayam, India">Gobichettipalayam, India</option>
+<option value="Gobindpur, India">Gobindpur, India</option>
+<option value="Godda, India">Godda, India</option>
+<option value="Godhra, India">Godhra, India</option>
+<option value="Gohadi, India">Gohadi, India</option>
+<option value="Gohāna, India">Gohāna, India</option>
+<option value="Gokak, India">Gokak, India</option>
+<option value="Gokarna, India">Gokarna, India</option>
+<option value="Golāghāt, India">Golāghāt, India</option>
+<option value="Gola Gokarannāth, India">Gola Gokarannāth, India</option>
+<option value="Gomoh, India">Gomoh, India</option>
+<option value="Gondā City, India">Gondā City, India</option>
+<option value="Gondal, India">Gondal, India</option>
+<option value="Gondiā, India">Gondiā, India</option>
+<option value="Gopālganj, India">Gopālganj, India</option>
+<option value="Gorakhpur, India">Gorakhpur, India</option>
+<option value="Goribidnūr, India">Goribidnūr, India</option>
+<option value="Gosāba, India">Gosāba, India</option>
+<option value="Govardhan, India">Govardhan, India</option>
+<option value="Goyerkāta, India">Goyerkāta, India</option>
+<option value="Greater Noida, India">Greater Noida, India</option>
+<option value="Gubbi, India">Gubbi, India</option>
+<option value="Gudalur, India">Gudalur, India</option>
+<option value="Gudivāda, India">Gudivāda, India</option>
+<option value="Gudiyatham, India">Gudiyatham, India</option>
+<option value="Gūdūr, India">Gūdūr, India</option>
+<option value="Gūduvāncheri, India">Gūduvāncheri, India</option>
+<option value="Gulābpura, India">Gulābpura, India</option>
+<option value="Gulāothi, India">Gulāothi, India</option>
+<option value="Gulbarga, India">Gulbarga, India</option>
+<option value="Guledagudda, India">Guledagudda, India</option>
+<option value="Gumia, India">Gumia, India</option>
+<option value="Gumlā, India">Gumlā, India</option>
+<option value="Gummidipundi, India">Gummidipundi, India</option>
+<option value="Guna, India">Guna, India</option>
+<option value="Gundlupēt, India">Gundlupēt, India</option>
+<option value="Gunnaur, India">Gunnaur, India</option>
+<option value="Guntakal Junction, India">Guntakal Junction, India</option>
+<option value="Guntur, India">Guntur, India</option>
+<option value="Gunupur, India">Gunupur, India</option>
+<option value="Gurgaon, India">Gurgaon, India</option>
+<option value="Gurmatkāl, India">Gurmatkāl, India</option>
+<option value="Gursahāiganj, India">Gursahāiganj, India</option>
+<option value="Gursarāi, India">Gursarāi, India</option>
+<option value="Guru Har Sahāi, India">Guru Har Sahāi, India</option>
+<option value="Guruvāyūr, India">Guruvāyūr, India</option>
+<option value="Guskhara, India">Guskhara, India</option>
+<option value="Guwahati, India">Guwahati, India</option>
+<option value="Gwalior, India">Gwalior, India</option>
+<option value="Hābra, India">Hābra, India</option>
+<option value="Hadagalli, India">Hadagalli, India</option>
+<option value="Hadgāon, India">Hadgāon, India</option>
+<option value="Hāflong, India">Hāflong, India</option>
+<option value="Hailākāndi, India">Hailākāndi, India</option>
+<option value="Hājīpur, India">Hājīpur, India</option>
+<option value="Hājo, India">Hājo, India</option>
+<option value="Haldaur, India">Haldaur, India</option>
+<option value="Haldia, India">Haldia, India</option>
+<option value="Haldwani, India">Haldwani, India</option>
+<option value="Hālīsahar, India">Hālīsahar, India</option>
+<option value="Haliyal, India">Haliyal, India</option>
+<option value="Hālol, India">Hālol, India</option>
+<option value="Halvad, India">Halvad, India</option>
+<option value="Hamīrpur, India">Hamīrpur, India</option>
+<option value="Handiā, India">Handiā, India</option>
+<option value="Hāngal, India">Hāngal, India</option>
+<option value="Hānsi, India">Hānsi, India</option>
+<option value="Hanumāngarh, India">Hanumāngarh, India</option>
+<option value="Hāpur, India">Hāpur, India</option>
+<option value="Harda Khās, India">Harda Khās, India</option>
+<option value="Hardoī, India">Hardoī, India</option>
+<option value="Haridwar, India">Haridwar, India</option>
+<option value="Harihar, India">Harihar, India</option>
+<option value="Hārij, India">Hārij, India</option>
+<option value="Harpālpur, India">Harpālpur, India</option>
+<option value="Harpanahalli, India">Harpanahalli, India</option>
+<option value="Harsūd, India">Harsūd, India</option>
+<option value="Harūr, India">Harūr, India</option>
+<option value="Hasanpur, India">Hasanpur, India</option>
+<option value="Hāsimāra, India">Hāsimāra, India</option>
+<option value="Hassan, India">Hassan, India</option>
+<option value="Hastināpur, India">Hastināpur, India</option>
+<option value="Hāthras, India">Hāthras, India</option>
+<option value="Hatta, India">Hatta, India</option>
+<option value="Hāveri, India">Hāveri, India</option>
+<option value="Hazāribāgh, India">Hazāribāgh, India</option>
+<option value="Hilsa, India">Hilsa, India</option>
+<option value="Himatnagar, India">Himatnagar, India</option>
+<option value="Hindaun, India">Hindaun, India</option>
+<option value="Hindoria, India">Hindoria, India</option>
+<option value="Hindupur, India">Hindupur, India</option>
+<option value="Hinganghāt, India">Hinganghāt, India</option>
+<option value="Hingoli, India">Hingoli, India</option>
+<option value="Hinjilikatu, India">Hinjilikatu, India</option>
+<option value="Hīrākud, India">Hīrākud, India</option>
+<option value="Hirekerūr, India">Hirekerūr, India</option>
+<option value="Hiriyūr, India">Hiriyūr, India</option>
+<option value="Hisar, India">Hisar, India</option>
+<option value="Hisuā, India">Hisuā, India</option>
+<option value="Hodal, India">Hodal, India</option>
+<option value="Hojāi, India">Hojāi, India</option>
+<option value="Holalkere, India">Holalkere, India</option>
+<option value="Hole Narsipur, India">Hole Narsipur, India</option>
+<option value="Homnābād, India">Homnābād, India</option>
+<option value="Honāvar, India">Honāvar, India</option>
+<option value="Honnāli, India">Honnāli, India</option>
+<option value="Hosdurga, India">Hosdurga, India</option>
+<option value="Hoshangābād, India">Hoshangābād, India</option>
+<option value="Hoshiārpur, India">Hoshiārpur, India</option>
+<option value="Hoskote, India">Hoskote, India</option>
+<option value="Hospet, India">Hospet, India</option>
+<option value="Hosūr, India">Hosūr, India</option>
+<option value="Howli, India">Howli, India</option>
+<option value="Hubli, India">Hubli, India</option>
+<option value="Hugli, India">Hugli, India</option>
+<option value="Hukeri, India">Hukeri, India</option>
+<option value="Hungund, India">Hungund, India</option>
+<option value="Hunsūr, India">Hunsūr, India</option>
+<option value="Husainābād, India">Husainābād, India</option>
+<option value="Hyderabad, India">Hyderabad, India</option>
+<option value="Ichalkaranji, India">Ichalkaranji, India</option>
+<option value="Ichchāpuram, India">Ichchāpuram, India</option>
+<option value="Idappadi, India">Idappadi, India</option>
+<option value="Igatpuri, India">Igatpuri, India</option>
+<option value="Ilkal, India">Ilkal, India</option>
+<option value="Imphal, India">Imphal, India</option>
+<option value="Indāpur, India">Indāpur, India</option>
+<option value="Indergarh, India">Indergarh, India</option>
+<option value="Indi, India">Indi, India</option>
+<option value="Indore, India">Indore, India</option>
+<option value="Indri, India">Indri, India</option>
+<option value="Ingrāj Bāzār, India">Ingrāj Bāzār, India</option>
+<option value="Iringal, India">Iringal, India</option>
+<option value="Irinjālakuda, India">Irinjālakuda, India</option>
+<option value="Irugūr, India">Irugūr, India</option>
+<option value="Islāmnagar, India">Islāmnagar, India</option>
+<option value="Islāmpur, India">Islāmpur, India</option>
+<option value="Itānagar, India">Itānagar, India</option>
+<option value="Itārsi, India">Itārsi, India</option>
+<option value="Itimādpur, India">Itimādpur, India</option>
+<option value="Jabalpur, India">Jabalpur, India</option>
+<option value="Jagādhri, India">Jagādhri, India</option>
+<option value="Jagalūr, India">Jagalūr, India</option>
+<option value="Jagatsinghapur, India">Jagatsinghapur, India</option>
+<option value="Jagdalpur, India">Jagdalpur, India</option>
+<option value="Jagdīshpur, India">Jagdīshpur, India</option>
+<option value="Jagdīspur, India">Jagdīspur, India</option>
+<option value="Jaggayyapeta, India">Jaggayyapeta, India</option>
+<option value="Jagraon, India">Jagraon, India</option>
+<option value="Jagtiāl, India">Jagtiāl, India</option>
+<option value="Jahānābād, India">Jahānābād, India</option>
+<option value="Jahāngīrābād, India">Jahāngīrābād, India</option>
+<option value="Jahāzpur, India">Jahāzpur, India</option>
+<option value="Jaigaon, India">Jaigaon, India</option>
+<option value="Jaipur, India">Jaipur, India</option>
+<option value="Jaisalmer, India">Jaisalmer, India</option>
+<option value="Jais, India">Jais, India</option>
+<option value="Jaisingpur, India">Jaisingpur, India</option>
+<option value="Jaitāran, India">Jaitāran, India</option>
+<option value="Jaito, India">Jaito, India</option>
+<option value="Jājpur, India">Jājpur, India</option>
+<option value="Jalālābad, India">Jalālābad, India</option>
+<option value="Jalālābād, India">Jalālābād, India</option>
+<option value="Jalālī, India">Jalālī, India</option>
+<option value="Jalālpur, India">Jalālpur, India</option>
+<option value="Jalandhar, India">Jalandhar, India</option>
+<option value="Jalārpet, India">Jalārpet, India</option>
+<option value="Jālaun, India">Jālaun, India</option>
+<option value="Jalesar, India">Jalesar, India</option>
+<option value="Jaleshwar, India">Jaleshwar, India</option>
+<option value="Jalgaon, India">Jalgaon, India</option>
+<option value="Jalgaon Jamod, India">Jalgaon Jamod, India</option>
+<option value="Jālna, India">Jālna, India</option>
+<option value="Jalor, India">Jalor, India</option>
+<option value="Jalpāiguri, India">Jalpāiguri, India</option>
+<option value="Jāmadoba, India">Jāmadoba, India</option>
+<option value="Jāmai, India">Jāmai, India</option>
+<option value="Jamālpur, India">Jamālpur, India</option>
+<option value="Jambusar, India">Jambusar, India</option>
+<option value="Jamkhandi, India">Jamkhandi, India</option>
+<option value="Jammalamadugu, India">Jammalamadugu, India</option>
+<option value="Jammu, India">Jammu, India</option>
+<option value="Jamnagar, India">Jamnagar, India</option>
+<option value="Jamshedpur, India">Jamshedpur, India</option>
+<option value="Jāmtāra, India">Jāmtāra, India</option>
+<option value="Jamūī, India">Jamūī, India</option>
+<option value="Jāmuria, India">Jāmuria, India</option>
+<option value="Jandiāla, India">Jandiāla, India</option>
+<option value="Jangaon, India">Jangaon, India</option>
+<option value="Jangipur, India">Jangipur, India</option>
+<option value="Jānjgīr, India">Jānjgīr, India</option>
+<option value="Jānsath, India">Jānsath, India</option>
+<option value="Jaorā, India">Jaorā, India</option>
+<option value="Jarwal, India">Jarwal, India</option>
+<option value="Jasdan, India">Jasdan, India</option>
+<option value="Jashpurnagar, India">Jashpurnagar, India</option>
+<option value="Jasidih, India">Jasidih, India</option>
+<option value="Jaspur, India">Jaspur, India</option>
+<option value="Jaswantnagar, India">Jaswantnagar, India</option>
+<option value="Jatani, India">Jatani, India</option>
+<option value="Jatāra, India">Jatāra, India</option>
+<option value="Jaunpur, India">Jaunpur, India</option>
+<option value="Jāwad, India">Jāwad, India</option>
+<option value="Jayamkondacholapuram, India">Jayamkondacholapuram, India</option>
+<option value="Jaynagar, India">Jaynagar, India</option>
+<option value="Jaynagar-Majilpur, India">Jaynagar-Majilpur, India</option>
+<option value="Jetpur, India">Jetpur, India</option>
+<option value="Jevargi, India">Jevargi, India</option>
+<option value="Jewar, India">Jewar, India</option>
+<option value="Jeypore, India">Jeypore, India</option>
+<option value="Jhābua, India">Jhābua, India</option>
+<option value="Jhā-Jhā, India">Jhā-Jhā, India</option>
+<option value="Jhajjar, India">Jhajjar, India</option>
+<option value="Jhālāwār, India">Jhālāwār, India</option>
+<option value="Jhalidā, India">Jhalidā, India</option>
+<option value="Jhālrapātan, India">Jhālrapātan, India</option>
+<option value="Jhālu, India">Jhālu, India</option>
+<option value="Jhanjhārpur, India">Jhanjhārpur, India</option>
+<option value="Jhānsi, India">Jhānsi, India</option>
+<option value="Jhārgrām, India">Jhārgrām, India</option>
+<option value="Jharia, India">Jharia, India</option>
+<option value="Jhārsugra, India">Jhārsugra, India</option>
+<option value="Jhīnjhak, India">Jhīnjhak, India</option>
+<option value="Jhinjhāna, India">Jhinjhāna, India</option>
+<option value="Jhunjhunūn, India">Jhunjhunūn, India</option>
+<option value="Jhūsi, India">Jhūsi, India</option>
+<option value="Jīnd, India">Jīnd, India</option>
+<option value="Jintūr, India">Jintūr, India</option>
+<option value="Jodhpur, India">Jodhpur, India</option>
+<option value="Jodiya Bandar, India">Jodiya Bandar, India</option>
+<option value="Jogbani, India">Jogbani, India</option>
+<option value="Jora, India">Jora, India</option>
+<option value="Jorhāt, India">Jorhāt, India</option>
+<option value="Jugsālai, India">Jugsālai, India</option>
+<option value="Jumri Tilaiyā, India">Jumri Tilaiyā, India</option>
+<option value="Jūnāgadh, India">Jūnāgadh, India</option>
+<option value="Jūnāgarh, India">Jūnāgarh, India</option>
+<option value="Junnar, India">Junnar, India</option>
+<option value="Kabrāi, India">Kabrāi, India</option>
+<option value="Kachhwa, India">Kachhwa, India</option>
+<option value="Kadakkavoor, India">Kadakkavoor, India</option>
+<option value="Kadayanallur, India">Kadayanallur, India</option>
+<option value="Kadi, India">Kadi, India</option>
+<option value="Kadiri, India">Kadiri, India</option>
+<option value="Kadod, India">Kadod, India</option>
+<option value="Kadūr, India">Kadūr, India</option>
+<option value="Kāgal, India">Kāgal, India</option>
+<option value="Kaikalūr, India">Kaikalūr, India</option>
+<option value="Kailāras, India">Kailāras, India</option>
+<option value="Kailāshahar, India">Kailāshahar, India</option>
+<option value="Kaimganj, India">Kaimganj, India</option>
+<option value="Kaimori, India">Kaimori, India</option>
+<option value="Kairāna, India">Kairāna, India</option>
+<option value="Kaithal, India">Kaithal, India</option>
+<option value="Kakching, India">Kakching, India</option>
+<option value="Kākināda, India">Kākināda, India</option>
+<option value="Kākori, India">Kākori, India</option>
+<option value="Kakrāla, India">Kakrāla, India</option>
+<option value="Kalakkādu, India">Kalakkādu, India</option>
+<option value="Kalamassery, India">Kalamassery, India</option>
+<option value="Kalamb, India">Kalamb, India</option>
+<option value="Kalamnūri, India">Kalamnūri, India</option>
+<option value="Kalānaur, India">Kalānaur, India</option>
+<option value="Kālānwāli, India">Kālānwāli, India</option>
+<option value="Kālāvad, India">Kālāvad, India</option>
+<option value="Kalavoor, India">Kalavoor, India</option>
+<option value="Kalghatgi, India">Kalghatgi, India</option>
+<option value="Kālimpong, India">Kālimpong, India</option>
+<option value="Kāliyāganj, India">Kāliyāganj, India</option>
+<option value="Kallakkurichchi, India">Kallakkurichchi, India</option>
+<option value="Kallidaikurichi, India">Kallidaikurichi, India</option>
+<option value="Kalmeshwar, India">Kalmeshwar, India</option>
+<option value="Kālna, India">Kālna, India</option>
+<option value="Kālol, India">Kālol, India</option>
+<option value="Kalpatta, India">Kalpatta, India</option>
+<option value="Kālpi, India">Kālpi, India</option>
+<option value="Kalugumalai, India">Kalugumalai, India</option>
+<option value="Kalyandurg, India">Kalyandurg, India</option>
+<option value="Kalyani, India">Kalyani, India</option>
+<option value="Kalyān, India">Kalyān, India</option>
+<option value="Kāmākhyānagar, India">Kāmākhyānagar, India</option>
+<option value="Kamalganj, India">Kamalganj, India</option>
+<option value="Kāman, India">Kāman, India</option>
+<option value="Kāmāreddi, India">Kāmāreddi, India</option>
+<option value="Kampli, India">Kampli, India</option>
+<option value="Kāmthi, India">Kāmthi, India</option>
+<option value="Kānchipuram, India">Kānchipuram, India</option>
+<option value="Kānchrāpāra, India">Kānchrāpāra, India</option>
+<option value="Kāndhla, India">Kāndhla, India</option>
+<option value="Kāndi, India">Kāndi, India</option>
+<option value="Kāndla, India">Kāndla, India</option>
+<option value="Kandukūr, India">Kandukūr, India</option>
+<option value="Kangayam, India">Kangayam, India</option>
+<option value="Kanigiri, India">Kanigiri, India</option>
+<option value="Kānkānhalli, India">Kānkānhalli, India</option>
+<option value="Kankauli, India">Kankauli, India</option>
+<option value="Kānke, India">Kānke, India</option>
+<option value="Kānker, India">Kānker, India</option>
+<option value="Kannad, India">Kannad, India</option>
+<option value="Kānnangād, India">Kānnangād, India</option>
+<option value="Kannauj, India">Kannauj, India</option>
+<option value="Kanniyākumāri, India">Kanniyākumāri, India</option>
+<option value="Kannod, India">Kannod, India</option>
+<option value="Kannur, India">Kannur, India</option>
+<option value="Kanpur, India">Kanpur, India</option>
+<option value="Kantābānji, India">Kantābānji, India</option>
+<option value="Kānth, India">Kānth, India</option>
+<option value="Kānt, India">Kānt, India</option>
+<option value="Kanuru, India">Kanuru, India</option>
+<option value="Kapadvanj, India">Kapadvanj, India</option>
+<option value="Kāpren, India">Kāpren, India</option>
+<option value="Kapūrthala, India">Kapūrthala, India</option>
+<option value="Karād, India">Karād, India</option>
+<option value="Kāraikāl, India">Kāraikāl, India</option>
+<option value="Kāraikkudi, India">Kāraikkudi, India</option>
+<option value="Kāramadai, India">Kāramadai, India</option>
+<option value="Karamsad, India">Karamsad, India</option>
+<option value="Kāranja, India">Kāranja, India</option>
+<option value="Karanpur, India">Karanpur, India</option>
+<option value="Karauli, India">Karauli, India</option>
+<option value="Kareli, India">Kareli, India</option>
+<option value="Karera, India">Karera, India</option>
+<option value="Karhal, India">Karhal, India</option>
+<option value="Karīmganj, India">Karīmganj, India</option>
+<option value="Karīmnagar, India">Karīmnagar, India</option>
+<option value="Karjat, India">Karjat, India</option>
+<option value="Kārkala, India">Kārkala, India</option>
+<option value="Karmāla, India">Karmāla, India</option>
+<option value="Karnāl, India">Karnāl, India</option>
+<option value="Kārsiyāng, India">Kārsiyāng, India</option>
+<option value="Kartārpur, India">Kartārpur, India</option>
+<option value="Karur, India">Karur, India</option>
+<option value="Karwar, India">Karwar, India</option>
+<option value="Kāsaragod, India">Kāsaragod, India</option>
+<option value="Kasba, India">Kasba, India</option>
+<option value="Kāsganj, India">Kāsganj, India</option>
+<option value="Kashipur, India">Kashipur, India</option>
+<option value="Kasrāwad, India">Kasrāwad, India</option>
+<option value="Katangi, India">Katangi, India</option>
+<option value="Katghora, India">Katghora, India</option>
+<option value="Kāthor, India">Kāthor, India</option>
+<option value="Kathua, India">Kathua, India</option>
+<option value="Katihar, India">Katihar, India</option>
+<option value="Kātol, India">Kātol, India</option>
+<option value="Kātoya, India">Kātoya, India</option>
+<option value="Kātpādi, India">Kātpādi, India</option>
+<option value="Kātrās, India">Kātrās, India</option>
+<option value="Kattanam, India">Kattanam, India</option>
+<option value="Kāvali, India">Kāvali, India</option>
+<option value="Kawardha, India">Kawardha, India</option>
+<option value="Kayalpattinam, India">Kayalpattinam, India</option>
+<option value="Kāyankulam, India">Kāyankulam, India</option>
+<option value="Keelakarai, India">Keelakarai, India</option>
+<option value="Kekri, India">Kekri, India</option>
+<option value="Kemrī, India">Kemrī, India</option>
+<option value="Kenda, India">Kenda, India</option>
+<option value="Kendrāparha, India">Kendrāparha, India</option>
+<option value="Kerūr, India">Kerūr, India</option>
+<option value="Keshod, India">Keshod, India</option>
+<option value="Keshorai Pātan, India">Keshorai Pātan, India</option>
+<option value="Kesinga, India">Kesinga, India</option>
+<option value="Khāchrod, India">Khāchrod, India</option>
+<option value="Khada, India">Khada, India</option>
+<option value="Khagaria, India">Khagaria, India</option>
+<option value="Khagaul, India">Khagaul, India</option>
+<option value="Khairābād, India">Khairābād, India</option>
+<option value="Khairāgarh, India">Khairāgarh, India</option>
+<option value="Khair, India">Khair, India</option>
+<option value="Khajuraho Group of Monuments, India">Khajuraho Group of Monuments, India</option>
+<option value="Khalīlābād, India">Khalīlābād, India</option>
+<option value="Khamaria, India">Khamaria, India</option>
+<option value="Khambhāliya, India">Khambhāliya, India</option>
+<option value="Khambhāt, India">Khambhāt, India</option>
+<option value="Khāmgaon, India">Khāmgaon, India</option>
+<option value="Khammam, India">Khammam, India</option>
+<option value="Khānāpur, India">Khānāpur, India</option>
+<option value="Khandela, India">Khandela, India</option>
+<option value="Khandwa, India">Khandwa, India</option>
+<option value="Khanna, India">Khanna, India</option>
+<option value="Khāpa, India">Khāpa, India</option>
+<option value="Kharagpur, India">Kharagpur, India</option>
+<option value="Khargone, India">Khargone, India</option>
+<option value="Kharkhauda, India">Kharkhauda, India</option>
+<option value="Kharsia, India">Kharsia, India</option>
+<option value="Khārupatia, India">Khārupatia, India</option>
+<option value="Khatauli, India">Khatauli, India</option>
+<option value="Khātegaon, India">Khātegaon, India</option>
+<option value="Khatīma, India">Khatīma, India</option>
+<option value="Khātra, India">Khātra, India</option>
+<option value="Kheda, India">Kheda, India</option>
+<option value="Khedbrahma, India">Khedbrahma, India</option>
+<option value="Khekra, India">Khekra, India</option>
+<option value="Kherālu, India">Kherālu, India</option>
+<option value="Kheri, India">Kheri, India</option>
+<option value="Khetia, India">Khetia, India</option>
+<option value="Khetri, India">Khetri, India</option>
+<option value="Khilchipur, India">Khilchipur, India</option>
+<option value="Khirkiyān, India">Khirkiyān, India</option>
+<option value="Khopoli, India">Khopoli, India</option>
+<option value="Khowai, India">Khowai, India</option>
+<option value="Khuldābād, India">Khuldābād, India</option>
+<option value="Khunti, India">Khunti, India</option>
+<option value="Khurai, India">Khurai, India</option>
+<option value="Khurda, India">Khurda, India</option>
+<option value="Khurja, India">Khurja, India</option>
+<option value="Khūtār, India">Khūtār, India</option>
+<option value="Kichha, India">Kichha, India</option>
+<option value="Kīl Bhuvanagiri, India">Kīl Bhuvanagiri, India</option>
+<option value="Kinwat, India">Kinwat, India</option>
+<option value="Kirandul, India">Kirandul, India</option>
+<option value="Kiraoli, India">Kiraoli, India</option>
+<option value="Kīratpur, India">Kīratpur, India</option>
+<option value="Kishanganj, India">Kishanganj, India</option>
+<option value="Kishangarh, India">Kishangarh, India</option>
+<option value="Kishtwār, India">Kishtwār, India</option>
+<option value="Kithor, India">Kithor, India</option>
+<option value="Kizhake Chālakudi, India">Kizhake Chālakudi, India</option>
+<option value="Koāth, India">Koāth, India</option>
+<option value="Koch Bihār, India">Koch Bihār, India</option>
+<option value="Kodaikānāl, India">Kodaikānāl, India</option>
+<option value="Kodār, India">Kodār, India</option>
+<option value="Kodarmā, India">Kodarmā, India</option>
+<option value="Kodīnar, India">Kodīnar, India</option>
+<option value="Kodoli, India">Kodoli, India</option>
+<option value="Kodungallūr, India">Kodungallūr, India</option>
+<option value="Koelwār, India">Koelwār, India</option>
+<option value="Kohima, India">Kohima, India</option>
+<option value="Kokrajhar, India">Kokrajhar, India</option>
+<option value="Kolāras, India">Kolāras, India</option>
+<option value="Kolār, India">Kolār, India</option>
+<option value="Kolasib, India">Kolasib, India</option>
+<option value="Kolhāpur, India">Kolhāpur, India</option>
+<option value="Kollam, India">Kollam, India</option>
+<option value="Kollegāl, India">Kollegāl, India</option>
+<option value="Konārka, India">Konārka, India</option>
+<option value="Konch, India">Konch, India</option>
+<option value="Kondagaon, India">Kondagaon, India</option>
+<option value="Kondapalle, India">Kondapalle, India</option>
+<option value="Konnūr, India">Konnūr, India</option>
+<option value="Koothanallur, India">Koothanallur, India</option>
+<option value="Kopāganj, India">Kopāganj, India</option>
+<option value="Kopargaon, India">Kopargaon, India</option>
+<option value="Koppal, India">Koppal, India</option>
+<option value="Korāput, India">Korāput, India</option>
+<option value="Koratla, India">Koratla, India</option>
+<option value="Korba, India">Korba, India</option>
+<option value="Koregaon, India">Koregaon, India</option>
+<option value="Korwai, India">Korwai, India</option>
+<option value="Kosamba, India">Kosamba, India</option>
+<option value="Kosigi, India">Kosigi, India</option>
+<option value="Kosi, India">Kosi, India</option>
+<option value="Kotagiri, India">Kotagiri, India</option>
+<option value="Kota, India">Kota, India</option>
+<option value="Kotā, India">Kotā, India</option>
+<option value="Kotamangalam, India">Kotamangalam, India</option>
+<option value="Kotapārh, India">Kotapārh, India</option>
+<option value="Kotdwāra, India">Kotdwāra, India</option>
+<option value="Kotkapura, India">Kotkapura, India</option>
+<option value="Kotma, India">Kotma, India</option>
+<option value="Kotputli, India">Kotputli, India</option>
+<option value="Kottagūdem, India">Kottagūdem, India</option>
+<option value="Kottayam, India">Kottayam, India</option>
+<option value="Kottūru, India">Kottūru, India</option>
+<option value="Kovilpatti, India">Kovilpatti, India</option>
+<option value="Kovūr, India">Kovūr, India</option>
+<option value="Kovvūr, India">Kovvūr, India</option>
+<option value="Koynanagar, India">Koynanagar, India</option>
+<option value="Kozhikode, India">Kozhikode, India</option>
+<option value="Krishnagiri, India">Krishnagiri, India</option>
+<option value="Krishnanagar, India">Krishnanagar, India</option>
+<option value="Krishnarājpet, India">Krishnarājpet, India</option>
+<option value="Kuchaiburi, India">Kuchaiburi, India</option>
+<option value="Kuchāman, India">Kuchāman, India</option>
+<option value="Kuchera, India">Kuchera, India</option>
+<option value="Kudachi, India">Kudachi, India</option>
+<option value="Kūdligi, India">Kūdligi, India</option>
+<option value="Kuju, India">Kuju, India</option>
+<option value="Kukshi, India">Kukshi, India</option>
+<option value="Kulgam, India">Kulgam, India</option>
+<option value="Kulittalai, India">Kulittalai, India</option>
+<option value="Kulpahār, India">Kulpahār, India</option>
+<option value="Kultali, India">Kultali, India</option>
+<option value="Kulti, India">Kulti, India</option>
+<option value="Kulu, India">Kulu, India</option>
+<option value="Kumbakonam, India">Kumbakonam, India</option>
+<option value="Kumbalam, India">Kumbalam, India</option>
+<option value="Kumbhrāj, India">Kumbhrāj, India</option>
+<option value="Kumhāri, India">Kumhāri, India</option>
+<option value="Kūmher, India">Kūmher, India</option>
+<option value="Kumta, India">Kumta, India</option>
+<option value="Kunda, India">Kunda, India</option>
+<option value="Kundarkhi, India">Kundarkhi, India</option>
+<option value="Kundgol, India">Kundgol, India</option>
+<option value="Kundla, India">Kundla, India</option>
+<option value="Kunigal, India">Kunigal, India</option>
+<option value="Kunnamangalam, India">Kunnamangalam, India</option>
+<option value="Kunnamkulam, India">Kunnamkulam, India</option>
+<option value="Kuppam, India">Kuppam, India</option>
+<option value="Kurandvād, India">Kurandvād, India</option>
+<option value="Kurduvādi, India">Kurduvādi, India</option>
+<option value="Kurinjippādi, India">Kurinjippādi, India</option>
+<option value="Kurnool, India">Kurnool, India</option>
+<option value="Kushtagi, India">Kushtagi, India</option>
+<option value="Kutiatodu, India">Kutiatodu, India</option>
+<option value="Kutiyāna, India">Kutiyāna, India</option>
+<option value="Kuttampuzha, India">Kuttampuzha, India</option>
+<option value="Kuzhithurai, India">Kuzhithurai, India</option>
+<option value="Kyathampalle, India">Kyathampalle, India</option>
+<option value="Lachhmangarh Sīkar, India">Lachhmangarh Sīkar, India</option>
+<option value="Lādnūn, India">Lādnūn, India</option>
+<option value="Lādwa, India">Lādwa, India</option>
+<option value="Lahār, India">Lahār, India</option>
+<option value="Lāharpur, India">Lāharpur, India</option>
+<option value="Lākheri, India">Lākheri, India</option>
+<option value="Lakhīmpur, India">Lakhīmpur, India</option>
+<option value="Lakhnādon, India">Lakhnādon, India</option>
+<option value="Lakhyabad, India">Lakhyabad, India</option>
+<option value="Laksar, India">Laksar, India</option>
+<option value="Lakshmeshwar, India">Lakshmeshwar, India</option>
+<option value="Lālganj, India">Lālganj, India</option>
+<option value="Lālgola, India">Lālgola, India</option>
+<option value="Lalgudi, India">Lalgudi, India</option>
+<option value="Lalitpur, India">Lalitpur, India</option>
+<option value="Lālpur, India">Lālpur, India</option>
+<option value="Lālsot, India">Lālsot, India</option>
+<option value="Lar, India">Lar, India</option>
+<option value="Lātehār, India">Lātehār, India</option>
+<option value="Lāthi, India">Lāthi, India</option>
+<option value="Latur, India">Latur, India</option>
+<option value="Laungowāl, India">Laungowāl, India</option>
+<option value="Lāwar Khās, India">Lāwar Khās, India</option>
+<option value="Leh, India">Leh, India</option>
+<option value="Leteri, India">Leteri, India</option>
+<option value="Limbdi, India">Limbdi, India</option>
+<option value="Lingsugūr, India">Lingsugūr, India</option>
+<option value="Lohārdagā, India">Lohārdagā, India</option>
+<option value="Lonār, India">Lonār, India</option>
+<option value="Lonavla, India">Lonavla, India</option>
+<option value="Losal, India">Losal, India</option>
+<option value="Luckeesarai, India">Luckeesarai, India</option>
+<option value="Lucknow, India">Lucknow, India</option>
+<option value="Ludhiāna, India">Ludhiāna, India</option>
+<option value="Lumding Railway Colony, India">Lumding Railway Colony, India</option>
+<option value="Lūnāvāda, India">Lūnāvāda, India</option>
+<option value="Lunglei, India">Lunglei, India</option>
+<option value="Mācherla, India">Mācherla, India</option>
+<option value="Māchhīwāra, India">Māchhīwāra, India</option>
+<option value="Machhlīshahr, India">Machhlīshahr, India</option>
+<option value="Machilīpatnam, India">Machilīpatnam, India</option>
+<option value="Madambakkam, India">Madambakkam, India</option>
+<option value="Madanapalle, India">Madanapalle, India</option>
+<option value="Maddagiri, India">Maddagiri, India</option>
+<option value="Maddūr, India">Maddūr, India</option>
+<option value="Madgaon, India">Madgaon, India</option>
+<option value="Madhipura, India">Madhipura, India</option>
+<option value="Madhubani, India">Madhubani, India</option>
+<option value="Madhupur, India">Madhupur, India</option>
+<option value="Madikeri, India">Madikeri, India</option>
+<option value="Madukkarai, India">Madukkarai, India</option>
+<option value="Madukkūr, India">Madukkūr, India</option>
+<option value="Madurai, India">Madurai, India</option>
+<option value="Madurāntakam, India">Madurāntakam, India</option>
+<option value="Māgadi, India">Māgadi, India</option>
+<option value="Maghar, India">Maghar, India</option>
+<option value="Mahād, India">Mahād, India</option>
+<option value="Mahālingpur, India">Mahālingpur, India</option>
+<option value="Maham, India">Maham, India</option>
+<option value="Mahārāganj, India">Mahārāganj, India</option>
+<option value="Mahārājgani, India">Mahārājgani, India</option>
+<option value="Mahāsamund, India">Mahāsamund, India</option>
+<option value="Mahbūbābād, India">Mahbūbābād, India</option>
+<option value="Mahbūbnagar, India">Mahbūbnagar, India</option>
+<option value="Mahē, India">Mahē, India</option>
+<option value="Mahemdāvād, India">Mahemdāvād, India</option>
+<option value="Mahendragarh, India">Mahendragarh, India</option>
+<option value="Maheshwar, India">Maheshwar, India</option>
+<option value="Mahgawān, India">Mahgawān, India</option>
+<option value="Mahīshādal, India">Mahīshādal, India</option>
+<option value="Mahmudābād, India">Mahmudābād, India</option>
+<option value="Mahobā, India">Mahobā, India</option>
+<option value="Maholi, India">Maholi, India</option>
+<option value="Mahudha, India">Mahudha, India</option>
+<option value="Mahwah, India">Mahwah, India</option>
+<option value="Maihar, India">Maihar, India</option>
+<option value="Maināguri, India">Maināguri, India</option>
+<option value="Mainpuri, India">Mainpuri, India</option>
+<option value="Mairwa, India">Mairwa, India</option>
+<option value="Mājalgaon, India">Mājalgaon, India</option>
+<option value="Makrāna, India">Makrāna, India</option>
+<option value="Maksi, India">Maksi, India</option>
+<option value="Mākum, India">Mākum, India</option>
+<option value="Malakanagiri, India">Malakanagiri, India</option>
+<option value="Malappuram, India">Malappuram, India</option>
+<option value="Malaut, India">Malaut, India</option>
+<option value="Malavalli, India">Malavalli, India</option>
+<option value="Mālegaon, India">Mālegaon, India</option>
+<option value="Māler Kotla, India">Māler Kotla, India</option>
+<option value="Malīhābād, India">Malīhābād, India</option>
+<option value="Malkapur, India">Malkapur, India</option>
+<option value="Malkāpur, India">Malkāpur, India</option>
+<option value="Mallasamudram, India">Mallasamudram, India</option>
+<option value="Malpe, India">Malpe, India</option>
+<option value="Mālpura, India">Mālpura, India</option>
+<option value="Mālūr, India">Mālūr, India</option>
+<option value="Mālvan, India">Mālvan, India</option>
+<option value="Manamadurai, India">Manamadurai, India</option>
+<option value="Manapparai, India">Manapparai, India</option>
+<option value="Manāsa, India">Manāsa, India</option>
+<option value="Mānāvadar, India">Mānāvadar, India</option>
+<option value="Manāwar, India">Manāwar, India</option>
+<option value="Mancherāl, India">Mancherāl, India</option>
+<option value="Māndalgarh, India">Māndalgarh, India</option>
+<option value="Māndal, India">Māndal, India</option>
+<option value="Mandamarri, India">Mandamarri, India</option>
+<option value="Mandapam, India">Mandapam, India</option>
+<option value="Mandapeta, India">Mandapeta, India</option>
+<option value="Mandāwar, India">Mandāwar, India</option>
+<option value="Mandideep, India">Mandideep, India</option>
+<option value="Mandi, India">Mandi, India</option>
+<option value="Mandlā, India">Mandlā, India</option>
+<option value="Mandsaur, India">Mandsaur, India</option>
+<option value="Māndu, India">Māndu, India</option>
+<option value="Māndvi, India">Māndvi, India</option>
+<option value="Mandya, India">Mandya, India</option>
+<option value="Maner, India">Maner, India</option>
+<option value="Mangalagiri, India">Mangalagiri, India</option>
+<option value="Mangaldai, India">Mangaldai, India</option>
+<option value="Mangalore, India">Mangalore, India</option>
+<option value="Manglaur, India">Manglaur, India</option>
+<option value="Māngrol, India">Māngrol, India</option>
+<option value="Mangrūl Pīr, India">Mangrūl Pīr, India</option>
+<option value="Maniar, India">Maniar, India</option>
+<option value="Manihāri, India">Manihāri, India</option>
+<option value="Manjeri, India">Manjeri, India</option>
+<option value="Manjhanpur, India">Manjhanpur, India</option>
+<option value="Mankāchar, India">Mankāchar, India</option>
+<option value="Manmād, India">Manmād, India</option>
+<option value="Mannārakkāt, India">Mannārakkāt, India</option>
+<option value="Mannargudi, India">Mannargudi, India</option>
+<option value="Manoharpur, India">Manoharpur, India</option>
+<option value="Mānsa, India">Mānsa, India</option>
+<option value="Manthani, India">Manthani, India</option>
+<option value="Manuguru, India">Manuguru, India</option>
+<option value="Mānvi, India">Mānvi, India</option>
+<option value="Mānwat, India">Mānwat, India</option>
+<option value="Māpuca, India">Māpuca, India</option>
+<option value="Mārahra, India">Mārahra, India</option>
+<option value="Marakkanam, India">Marakkanam, India</option>
+<option value="Marayur, India">Marayur, India</option>
+<option value="Margherita, India">Margherita, India</option>
+<option value="Marhaura, India">Marhaura, India</option>
+<option value="Mariāhu, India">Mariāhu, India</option>
+<option value="Mariāni, India">Mariāni, India</option>
+<option value="Mārkāpur, India">Mārkāpur, India</option>
+<option value="Masaurhi Buzurg, India">Masaurhi Buzurg, India</option>
+<option value="Mātābhānga, India">Mātābhānga, India</option>
+<option value="Mathura, India">Mathura, India</option>
+<option value="Mattanur, India">Mattanur, India</option>
+<option value="Mau Aimma, India">Mau Aimma, India</option>
+<option value="Maudaha, India">Maudaha, India</option>
+<option value="Mauganj, India">Mauganj, India</option>
+<option value="Mau, India">Mau, India</option>
+<option value="Maur, India">Maur, India</option>
+<option value="Māvelikara, India">Māvelikara, India</option>
+<option value="Mavoor, India">Mavoor, India</option>
+<option value="Mawāna, India">Mawāna, India</option>
+<option value="Mayāng Imphāl, India">Mayāng Imphāl, India</option>
+<option value="Mayiladuthurai, India">Mayiladuthurai, India</option>
+<option value="Medak, India">Medak, India</option>
+<option value="Medinīpur, India">Medinīpur, India</option>
+<option value="Meerut, India">Meerut, India</option>
+<option value="Mehekar, India">Mehekar, India</option>
+<option value="Mehndāwal, India">Mehndāwal, India</option>
+<option value="Melur, India">Melur, India</option>
+<option value="Memāri, India">Memāri, India</option>
+<option value="Mendarda, India">Mendarda, India</option>
+<option value="Merta, India">Merta, India</option>
+<option value="Mettupalayam, India">Mettupalayam, India</option>
+<option value="Mettur, India">Mettur, India</option>
+<option value="Mhāsvād, India">Mhāsvād, India</option>
+<option value="Mihona, India">Mihona, India</option>
+<option value="Milak, India">Milak, India</option>
+<option value="Mīnjūr, India">Mīnjūr, India</option>
+<option value="Mīrānpur, India">Mīrānpur, India</option>
+<option value="Mīrānpur Katra, India">Mīrānpur Katra, India</option>
+<option value="Mīrganj, India">Mīrganj, India</option>
+<option value="Miriālgūda, India">Miriālgūda, India</option>
+<option value="Mirzāpur, India">Mirzāpur, India</option>
+<option value="Misrikh, India">Misrikh, India</option>
+<option value="Modāsa, India">Modāsa, India</option>
+<option value="Moga, India">Moga, India</option>
+<option value="Moirāng, India">Moirāng, India</option>
+<option value="Mokameh, India">Mokameh, India</option>
+<option value="Mokokchūng, India">Mokokchūng, India</option>
+<option value="Monghyr, India">Monghyr, India</option>
+<option value="Mon, India">Mon, India</option>
+<option value="Monoharpur, India">Monoharpur, India</option>
+<option value="Morādābād, India">Morādābād, India</option>
+<option value="Moram, India">Moram, India</option>
+<option value="Morār, India">Morār, India</option>
+<option value="Morbi, India">Morbi, India</option>
+<option value="Morena, India">Morena, India</option>
+<option value="Morigaon, India">Morigaon, India</option>
+<option value="Morinda, India">Morinda, India</option>
+<option value="Mormugao, India">Mormugao, India</option>
+<option value="Morsi, India">Morsi, India</option>
+<option value="Morwa, India">Morwa, India</option>
+<option value="Mothīhāri, India">Mothīhāri, India</option>
+<option value="Mubārakpur, India">Mubārakpur, India</option>
+<option value="Mūdbidri, India">Mūdbidri, India</option>
+<option value="Muddebihāl, India">Muddebihāl, India</option>
+<option value="Mudgal, India">Mudgal, India</option>
+<option value="Mudhol, India">Mudhol, India</option>
+<option value="Mudkhed, India">Mudkhed, India</option>
+<option value="Mughal Sarāi, India">Mughal Sarāi, India</option>
+<option value="Muhammadābād, India">Muhammadābād, India</option>
+<option value="Mukeriān, India">Mukeriān, India</option>
+<option value="Mukher, India">Mukher, India</option>
+<option value="Muktsar, India">Muktsar, India</option>
+<option value="Mulbāgal, India">Mulbāgal, India</option>
+<option value="Mulgund, India">Mulgund, India</option>
+<option value="Mūl, India">Mūl, India</option>
+<option value="Mūlki, India">Mūlki, India</option>
+<option value="Multai, India">Multai, India</option>
+<option value="Muluppilagadu, India">Muluppilagadu, India</option>
+<option value="Mumbai, India">Mumbai, India</option>
+<option value="Mundargi, India">Mundargi, India</option>
+<option value="Mundgod, India">Mundgod, India</option>
+<option value="Mundra, India">Mundra, India</option>
+<option value="Mūndwa, India">Mūndwa, India</option>
+<option value="Mungaoli, India">Mungaoli, India</option>
+<option value="Mungeli, India">Mungeli, India</option>
+<option value="Munnar, India">Munnar, India</option>
+<option value="Murādnagar, India">Murādnagar, India</option>
+<option value="Murbād, India">Murbād, India</option>
+<option value="Murlīganj, India">Murlīganj, India</option>
+<option value="Murshidābād, India">Murshidābād, India</option>
+<option value="Murtajāpur, India">Murtajāpur, India</option>
+<option value="Murudeshwara, India">Murudeshwara, India</option>
+<option value="Murwāra, India">Murwāra, India</option>
+<option value="Mushābani, India">Mushābani, India</option>
+<option value="Musiri, India">Musiri, India</option>
+<option value="Mussoorie, India">Mussoorie, India</option>
+<option value="Muttupet, India">Muttupet, India</option>
+<option value="Mūvattupula, India">Mūvattupula, India</option>
+<option value="Muvattupuzha, India">Muvattupuzha, India</option>
+<option value="Muzaffarnagar, India">Muzaffarnagar, India</option>
+<option value="Muzaffarpur, India">Muzaffarpur, India</option>
+<option value="Mysore, India">Mysore, India</option>
+<option value="Nabagrām, India">Nabagrām, India</option>
+<option value="Nābha, India">Nābha, India</option>
+<option value="Nabīnagar, India">Nabīnagar, India</option>
+<option value="Nādāpuram, India">Nādāpuram, India</option>
+<option value="Nādbai, India">Nādbai, India</option>
+<option value="Nadiād, India">Nadiād, India</option>
+<option value="Naduvannūr, India">Naduvannūr, India</option>
+<option value="Nāgamangala, India">Nāgamangala, India</option>
+<option value="Nagari, India">Nagari, India</option>
+<option value="Nagar, India">Nagar, India</option>
+<option value="Nāgar Karnūl, India">Nāgar Karnūl, India</option>
+<option value="Nāgaur, India">Nāgaur, India</option>
+<option value="Nagda, India">Nagda, India</option>
+<option value="Nāgercoil, India">Nāgercoil, India</option>
+<option value="Nagīna, India">Nagīna, India</option>
+<option value="Nāgod, India">Nāgod, India</option>
+<option value="Nagpur, India">Nagpur, India</option>
+<option value="Nāhan, India">Nāhan, India</option>
+<option value="Naharlagun, India">Naharlagun, India</option>
+<option value="Nahorkatiya, India">Nahorkatiya, India</option>
+<option value="Naihāti, India">Naihāti, India</option>
+<option value="Naini Tāl, India">Naini Tāl, India</option>
+<option value="Nainpur, India">Nainpur, India</option>
+<option value="Nainwa, India">Nainwa, India</option>
+<option value="Najībābād, India">Najībābād, India</option>
+<option value="Nakodar, India">Nakodar, India</option>
+<option value="Naksalbāri, India">Naksalbāri, India</option>
+<option value="Nakūr, India">Nakūr, India</option>
+<option value="Naldurg, India">Naldurg, India</option>
+<option value="Nalgonda, India">Nalgonda, India</option>
+<option value="Nalhāti, India">Nalhāti, India</option>
+<option value="Nāmagiripettai, India">Nāmagiripettai, India</option>
+<option value="Nāmakkal, India">Nāmakkal, India</option>
+<option value="Nambiyūr, India">Nambiyūr, India</option>
+<option value="Nāmrup, India">Nāmrup, India</option>
+<option value="Nanauta, India">Nanauta, India</option>
+<option value="Nanded, India">Nanded, India</option>
+<option value="Nāndgaon, India">Nāndgaon, India</option>
+<option value="Nandigāma, India">Nandigāma, India</option>
+<option value="Nandikotkūr, India">Nandikotkūr, India</option>
+<option value="Nāndūra Buzurg, India">Nāndūra Buzurg, India</option>
+<option value="Nandurbar, India">Nandurbar, India</option>
+<option value="Nandyāl, India">Nandyāl, India</option>
+<option value="Nāngal Township, India">Nāngal Township, India</option>
+<option value="Nanjangūd, India">Nanjangūd, India</option>
+<option value="Nānpāra, India">Nānpāra, India</option>
+<option value="Napāsar, India">Napāsar, India</option>
+<option value="Naraina, India">Naraina, India</option>
+<option value="Naraini, India">Naraini, India</option>
+<option value="Narasannapeta, India">Narasannapeta, India</option>
+<option value="Narasapur, India">Narasapur, India</option>
+<option value="Narasaraopet, India">Narasaraopet, India</option>
+<option value="Narauli, India">Narauli, India</option>
+<option value="Naraura, India">Naraura, India</option>
+<option value="Narāyangarh, India">Narāyangarh, India</option>
+<option value="Nārāyanpet, India">Nārāyanpet, India</option>
+<option value="Naregal, India">Naregal, India</option>
+<option value="Nargund, India">Nargund, India</option>
+<option value="Nārnaul, India">Nārnaul, India</option>
+<option value="Nārnaund, India">Nārnaund, India</option>
+<option value="Narsimhapur, India">Narsimhapur, India</option>
+<option value="Narsinghgarh, India">Narsinghgarh, India</option>
+<option value="Narsīpatnam, India">Narsīpatnam, India</option>
+<option value="Narwāna, India">Narwāna, India</option>
+<option value="Narwar, India">Narwar, India</option>
+<option value="Nashik, India">Nashik, India</option>
+<option value="Nasīrābād, India">Nasīrābād, India</option>
+<option value="Nāspur, India">Nāspur, India</option>
+<option value="Nāsriganj, India">Nāsriganj, India</option>
+<option value="Nasrullāhganj, India">Nasrullāhganj, India</option>
+<option value="Nāthdwāra, India">Nāthdwāra, India</option>
+<option value="Nattam, India">Nattam, India</option>
+<option value="Naugachhia, India">Naugachhia, India</option>
+<option value="Nautanwa, India">Nautanwa, India</option>
+<option value="Navadwīp, India">Navadwīp, India</option>
+<option value="Navalgund, India">Navalgund, India</option>
+<option value="Nawābganj, India">Nawābganj, India</option>
+<option value="Nawāda, India">Nawāda, India</option>
+<option value="Nāwa, India">Nāwa, India</option>
+<option value="Nawalgarh, India">Nawalgarh, India</option>
+<option value="Nawanshahr, India">Nawanshahr, India</option>
+<option value="Nayāgarh, India">Nayāgarh, India</option>
+<option value="Nāyudupet, India">Nāyudupet, India</option>
+<option value="Nedumangād, India">Nedumangād, India</option>
+<option value="Neem ka Thana, India">Neem ka Thana, India</option>
+<option value="Negapatam, India">Negapatam, India</option>
+<option value="Nelamangala, India">Nelamangala, India</option>
+<option value="Nellikkuppam, India">Nellikkuppam, India</option>
+<option value="Nellore, India">Nellore, India</option>
+<option value="Nepānagar, India">Nepānagar, India</option>
+<option value="Neral, India">Neral, India</option>
+<option value="New Delhi, India">New Delhi, India</option>
+<option value="Neyyāttinkara, India">Neyyāttinkara, India</option>
+<option value="Nichlaul, India">Nichlaul, India</option>
+<option value="Nidadavole, India">Nidadavole, India</option>
+<option value="Nihtaur, India">Nihtaur, India</option>
+<option value="Nilakottai, India">Nilakottai, India</option>
+<option value="Nilanga, India">Nilanga, India</option>
+<option value="Nīlēshwar, India">Nīlēshwar, India</option>
+<option value="Nīlgiri, India">Nīlgiri, India</option>
+<option value="Nīlokheri, India">Nīlokheri, India</option>
+<option value="Nīmāj, India">Nīmāj, India</option>
+<option value="Nimāparha, India">Nimāparha, India</option>
+<option value="Nīmbāhera, India">Nīmbāhera, India</option>
+<option value="Nipāni, India">Nipāni, India</option>
+<option value="Nirmāli, India">Nirmāli, India</option>
+<option value="Nirmal, India">Nirmal, India</option>
+<option value="Niwai, India">Niwai, India</option>
+<option value="Nizāmābād, India">Nizāmābād, India</option>
+<option value="Noāmundi, India">Noāmundi, India</option>
+<option value="Nohar, India">Nohar, India</option>
+<option value="Noida, India">Noida, India</option>
+<option value="Nokha, India">Nokha, India</option>
+<option value="Nongstoin, India">Nongstoin, India</option>
+<option value="North Guwāhāti, India">North Guwāhāti, India</option>
+<option value="North Lakhimpur, India">North Lakhimpur, India</option>
+<option value="Nowrangapur, India">Nowrangapur, India</option>
+<option value="Nūrpur, India">Nūrpur, India</option>
+<option value="Nūzvīd, India">Nūzvīd, India</option>
+<option value="Obra, India">Obra, India</option>
+<option value="Okha, India">Okha, India</option>
+<option value="Ongole, India">Ongole, India</option>
+<option value="Ooty, India">Ooty, India</option>
+<option value="Orai, India">Orai, India</option>
+<option value="Osmanabad, India">Osmanabad, India</option>
+<option value="Ottappālam, India">Ottappālam, India</option>
+<option value="Ozar, India">Ozar, India</option>
+<option value="Pāchora, India">Pāchora, India</option>
+<option value="Pachperwa, India">Pachperwa, India</option>
+<option value="Padam, India">Padam, India</option>
+<option value="Padampur, India">Padampur, India</option>
+<option value="Padmanābhapuram, India">Padmanābhapuram, India</option>
+<option value="Padra, India">Padra, India</option>
+<option value="Padrauna, India">Padrauna, India</option>
+<option value="Pahāsu, India">Pahāsu, India</option>
+<option value="Paithan, India">Paithan, India</option>
+<option value="Pākāla, India">Pākāla, India</option>
+<option value="Pākaur, India">Pākaur, India</option>
+<option value="Pālakkodu, India">Pālakkodu, India</option>
+<option value="Pālakollu, India">Pālakollu, India</option>
+<option value="Palani, India">Palani, India</option>
+<option value="Pālanpur, India">Pālanpur, India</option>
+<option value="Palāsa, India">Palāsa, India</option>
+<option value="Palera, India">Palera, India</option>
+<option value="Pālghar, India">Pālghar, India</option>
+<option value="Pālghāt, India">Pālghāt, India</option>
+<option value="Paliā Kalān, India">Paliā Kalān, India</option>
+<option value="Pāli, India">Pāli, India</option>
+<option value="Pālitāna, India">Pālitāna, India</option>
+<option value="Pālkonda, India">Pālkonda, India</option>
+<option value="Palladam, India">Palladam, India</option>
+<option value="Pallappatti, India">Pallappatti, India</option>
+<option value="Pallikondai, India">Pallikondai, India</option>
+<option value="Pallippatti, India">Pallippatti, India</option>
+<option value="Palmaner, India">Palmaner, India</option>
+<option value="Pāloncha, India">Pāloncha, India</option>
+<option value="Palwal, India">Palwal, India</option>
+<option value="Palwancha, India">Palwancha, India</option>
+<option value="Panāgar, India">Panāgar, India</option>
+<option value="Panaji, India">Panaji, India</option>
+<option value="Pānchla, India">Pānchla, India</option>
+<option value="Pandharpur, India">Pandharpur, India</option>
+<option value="Pāndhurnā, India">Pāndhurnā, India</option>
+<option value="Pandua, India">Pandua, India</option>
+<option value="Pānīpat, India">Pānīpat, India</option>
+<option value="Panna, India">Panna, India</option>
+<option value="Panruti, India">Panruti, India</option>
+<option value="Panvel, India">Panvel, India</option>
+<option value="Pāonta Sāhib, India">Pāonta Sāhib, India</option>
+<option value="Papanasam, India">Papanasam, India</option>
+<option value="Pāppinisshēri, India">Pāppinisshēri, India</option>
+<option value="Parādīp Garh, India">Parādīp Garh, India</option>
+<option value="Paramagudi, India">Paramagudi, India</option>
+<option value="Parāsia, India">Parāsia, India</option>
+<option value="Paravūr Tekkumbhāgam, India">Paravūr Tekkumbhāgam, India</option>
+<option value="Parbhani, India">Parbhani, India</option>
+<option value="Pārdi, India">Pārdi, India</option>
+<option value="Parīchhatgarh, India">Parīchhatgarh, India</option>
+<option value="Pariyāpuram, India">Pariyāpuram, India</option>
+<option value="Parlākimidi, India">Parlākimidi, India</option>
+<option value="Parli Vaijnāth, India">Parli Vaijnāth, India</option>
+<option value="Parola, India">Parola, India</option>
+<option value="Partūr, India">Partūr, India</option>
+<option value="Pārvatipuram, India">Pārvatipuram, India</option>
+<option value="Parvatsar, India">Parvatsar, India</option>
+<option value="Pasān, India">Pasān, India</option>
+<option value="Pāsighāt, India">Pāsighāt, India</option>
+<option value="Patāmundai, India">Patāmundai, India</option>
+<option value="Patancheru, India">Patancheru, India</option>
+<option value="Pātan, India">Pātan, India</option>
+<option value="Pataudi, India">Pataudi, India</option>
+<option value="Pathalgaon, India">Pathalgaon, India</option>
+<option value="Pathanāmthitta, India">Pathanāmthitta, India</option>
+<option value="Pathānkot, India">Pathānkot, India</option>
+<option value="Pāthardih, India">Pāthardih, India</option>
+<option value="Pāthardi, India">Pāthardi, India</option>
+<option value="Patharia, India">Patharia, India</option>
+<option value="Pāthri, India">Pāthri, India</option>
+<option value="Patiāla, India">Patiāla, India</option>
+<option value="Patnāgarh, India">Patnāgarh, India</option>
+<option value="Patna, India">Patna, India</option>
+<option value="Patti, India">Patti, India</option>
+<option value="Pattukkottai, India">Pattukkottai, India</option>
+<option value="Pātūr, India">Pātūr, India</option>
+<option value="Pauri, India">Pauri, India</option>
+<option value="Pāvugada, India">Pāvugada, India</option>
+<option value="Pawāyan, India">Pawāyan, India</option>
+<option value="Pawni, India">Pawni, India</option>
+<option value="Payyannūr, India">Payyannūr, India</option>
+<option value="Pedana, India">Pedana, India</option>
+<option value="Peddapalli, India">Peddapalli, India</option>
+<option value="Peddāpuram, India">Peddāpuram, India</option>
+<option value="Pehowa, India">Pehowa, India</option>
+<option value="Pen, India">Pen, India</option>
+<option value="Pennādam, India">Pennādam, India</option>
+<option value="Pennāgaram, India">Pennāgaram, India</option>
+<option value="Penugonda, India">Penugonda, India</option>
+<option value="Penukonda, India">Penukonda, India</option>
+<option value="Perambalur, India">Perambalur, India</option>
+<option value="Peranāmpattu, India">Peranāmpattu, India</option>
+<option value="Peravurani, India">Peravurani, India</option>
+<option value="Periyakulam, India">Periyakulam, India</option>
+<option value="Periyanayakkanpalaiyam, India">Periyanayakkanpalaiyam, India</option>
+<option value="Perumbavoor, India">Perumbavoor, India</option>
+<option value="Perumpāvūr, India">Perumpāvūr, India</option>
+<option value="Perundurai, India">Perundurai, India</option>
+<option value="Petlād, India">Petlād, India</option>
+<option value="Phagwāra, India">Phagwāra, India</option>
+<option value="Phalauda, India">Phalauda, India</option>
+<option value="Phalodi, India">Phalodi, India</option>
+<option value="Phaltan, India">Phaltan, India</option>
+<option value="Phaphūnd, India">Phaphūnd, India</option>
+<option value="Phek, India">Phek, India</option>
+<option value="Phillaur, India">Phillaur, India</option>
+<option value="Phirangipuram, India">Phirangipuram, India</option>
+<option value="Phulbāni, India">Phulbāni, India</option>
+<option value="Phulera, India">Phulera, India</option>
+<option value="Phulpur, India">Phulpur, India</option>
+<option value="Pihānī, India">Pihānī, India</option>
+<option value="Pilāni, India">Pilāni, India</option>
+<option value="Pilibangan, India">Pilibangan, India</option>
+<option value="Pīlibhīt, India">Pīlibhīt, India</option>
+<option value="Pilkhua, India">Pilkhua, India</option>
+<option value="Pināhat, India">Pināhat, India</option>
+<option value="Pindwāra, India">Pindwāra, India</option>
+<option value="Pīpār, India">Pīpār, India</option>
+<option value="Pipili, India">Pipili, India</option>
+<option value="Pipraich, India">Pipraich, India</option>
+<option value="Pīpri, India">Pīpri, India</option>
+<option value="Piravam, India">Piravam, India</option>
+<option value="Piriyāpatna, India">Piriyāpatna, India</option>
+<option value="Piro, India">Piro, India</option>
+<option value="Pithampur, India">Pithampur, India</option>
+<option value="Pithāpuram, India">Pithāpuram, India</option>
+<option value="Pithorāgarh, India">Pithorāgarh, India</option>
+<option value="Pokaran, India">Pokaran, India</option>
+<option value="Polasara, India">Polasara, India</option>
+<option value="Polavaram, India">Polavaram, India</option>
+<option value="Pollachi, India">Pollachi, India</option>
+<option value="Polūr, India">Polūr, India</option>
+<option value="Ponda, India">Ponda, India</option>
+<option value="Ponmana, India">Ponmana, India</option>
+<option value="Ponnāni, India">Ponnāni, India</option>
+<option value="Ponneri, India">Ponneri, India</option>
+<option value="Ponnur, India">Ponnur, India</option>
+<option value="Ponnūru, India">Ponnūru, India</option>
+<option value="Porbandar, India">Porbandar, India</option>
+<option value="Porsa, India">Porsa, India</option>
+<option value="Port Blair, India">Port Blair, India</option>
+<option value="Pratāpgarh, India">Pratāpgarh, India</option>
+<option value="Proddatūr, India">Proddatūr, India</option>
+<option value="Puducherry, India">Puducherry, India</option>
+<option value="Pudukkottai, India">Pudukkottai, India</option>
+<option value="Pujali, India">Pujali, India</option>
+<option value="Pukhrāyān, India">Pukhrāyān, India</option>
+<option value="Pulgaon, India">Pulgaon, India</option>
+<option value="Pulivendla, India">Pulivendla, India</option>
+<option value="Puliyangudi, India">Puliyangudi, India</option>
+<option value="Pulwama, India">Pulwama, India</option>
+<option value="Pūnāhāna, India">Pūnāhāna, India</option>
+<option value="Punalūr, India">Punalūr, India</option>
+<option value="Punāsa, India">Punāsa, India</option>
+<option value="Pūnch, India">Pūnch, India</option>
+<option value="Pūndri, India">Pūndri, India</option>
+<option value="Pune, India">Pune, India</option>
+<option value="Punganūru, India">Punganūru, India</option>
+<option value="Punjai Puliyampatti, India">Punjai Puliyampatti, India</option>
+<option value="Pupri, India">Pupri, India</option>
+<option value="Pūranpur, India">Pūranpur, India</option>
+<option value="Puri, India">Puri, India</option>
+<option value="Pūrna, India">Pūrna, India</option>
+<option value="Purnia, India">Purnia, India</option>
+<option value="Puruliya, India">Puruliya, India</option>
+<option value="Purwā, India">Purwā, India</option>
+<option value="Pusad, India">Pusad, India</option>
+<option value="Pushkar, India">Pushkar, India</option>
+<option value="Puttūr, India">Puttūr, India</option>
+<option value="Qādiān, India">Qādiān, India</option>
+<option value="Rabkavi, India">Rabkavi, India</option>
+<option value="Rādhanpur, India">Rādhanpur, India</option>
+<option value="Raebareli, India">Raebareli, India</option>
+<option value="Rafiganj, India">Rafiganj, India</option>
+<option value="Rāghogarh, India">Rāghogarh, India</option>
+<option value="Raghunathpur, India">Raghunathpur, India</option>
+<option value="Rāhatgarh, India">Rāhatgarh, India</option>
+<option value="Rahimatpur, India">Rahimatpur, India</option>
+<option value="Rāhuri, India">Rāhuri, India</option>
+<option value="Rāichūr, India">Rāichūr, India</option>
+<option value="Rāiganj, India">Rāiganj, India</option>
+<option value="Raigarh, India">Raigarh, India</option>
+<option value="Rāikot, India">Rāikot, India</option>
+<option value="Raipur, India">Raipur, India</option>
+<option value="Rāipur, India">Rāipur, India</option>
+<option value="Raisen, India">Raisen, India</option>
+<option value="Rāisinghnagar, India">Rāisinghnagar, India</option>
+<option value="Rājahmundry, India">Rājahmundry, India</option>
+<option value="Rājākhera, India">Rājākhera, India</option>
+<option value="Rājaldesar, India">Rājaldesar, India</option>
+<option value="Rajaori, India">Rajaori, India</option>
+<option value="Rajapalaiyam, India">Rajapalaiyam, India</option>
+<option value="Rājgarh, India">Rājgarh, India</option>
+<option value="Rājgīr, India">Rājgīr, India</option>
+<option value="Rājgurunagar, India">Rājgurunagar, India</option>
+<option value="Rājkot, India">Rājkot, India</option>
+<option value="Rājmahal, India">Rājmahal, India</option>
+<option value="Rāj-Nāndgaon, India">Rāj-Nāndgaon, India</option>
+<option value="Rājpīpla, India">Rājpīpla, India</option>
+<option value="Rājpura, India">Rājpura, India</option>
+<option value="Rajpur, India">Rajpur, India</option>
+<option value="Rājsamand, India">Rājsamand, India</option>
+<option value="Rājula, India">Rājula, India</option>
+<option value="Rājūra, India">Rājūra, India</option>
+<option value="Rāmachandrapuram, India">Rāmachandrapuram, India</option>
+<option value="Ramagundam, India">Ramagundam, India</option>
+<option value="Ramanathapuram, India">Ramanathapuram, India</option>
+<option value="Ramanayyapeta, India">Ramanayyapeta, India</option>
+<option value="Rāmāpuram, India">Rāmāpuram, India</option>
+<option value="Rameswaram, India">Rameswaram, India</option>
+<option value="Rāmganj Mandi, India">Rāmganj Mandi, India</option>
+<option value="Rāmgarh, India">Rāmgarh, India</option>
+<option value="Rāmgundam, India">Rāmgundam, India</option>
+<option value="Rāmjībanpur, India">Rāmjībanpur, India</option>
+<option value="Rāmnagar, India">Rāmnagar, India</option>
+<option value="Rampachodavaram, India">Rampachodavaram, India</option>
+<option value="Rāmpura, India">Rāmpura, India</option>
+<option value="Rampur Hat, India">Rampur Hat, India</option>
+<option value="Rāmpur, India">Rāmpur, India</option>
+<option value="Rāmtek, India">Rāmtek, India</option>
+<option value="Rānāghāt, India">Rānāghāt, India</option>
+<option value="Rānāvāv, India">Rānāvāv, India</option>
+<option value="Ranchi, India">Ranchi, India</option>
+<option value="Rangāpāra, India">Rangāpāra, India</option>
+<option value="Rangia, India">Rangia, India</option>
+<option value="Rānia, India">Rānia, India</option>
+<option value="Rānībennur, India">Rānībennur, India</option>
+<option value="Rānīganj, India">Rānīganj, India</option>
+<option value="Rānikhet, India">Rānikhet, India</option>
+<option value="Rānīpur, India">Rānīpur, India</option>
+<option value="Rāpar, India">Rāpar, India</option>
+<option value="Rasipuram, India">Rasipuram, India</option>
+<option value="Rasrā, India">Rasrā, India</option>
+<option value="Ratangarh, India">Ratangarh, India</option>
+<option value="Ratanpur, India">Ratanpur, India</option>
+<option value="Rāth, India">Rāth, India</option>
+<option value="Ratia, India">Ratia, India</option>
+<option value="Ratlām, India">Ratlām, India</option>
+<option value="Ratnagiri, India">Ratnagiri, India</option>
+<option value="Raurkela, India">Raurkela, India</option>
+<option value="Rāver, India">Rāver, India</option>
+<option value="Rāwatbhāta, India">Rāwatbhāta, India</option>
+<option value="Rāwatsār, India">Rāwatsār, India</option>
+<option value="Raxaul, India">Raxaul, India</option>
+<option value="Rāyachoti, India">Rāyachoti, India</option>
+<option value="Rāyadrug, India">Rāyadrug, India</option>
+<option value="Rāya, India">Rāya, India</option>
+<option value="Rāybāg, India">Rāybāg, India</option>
+<option value="Rāzām, India">Rāzām, India</option>
+<option value="Rāzampeta, India">Rāzampeta, India</option>
+<option value="Rehli, India">Rehli, India</option>
+<option value="Remuna, India">Remuna, India</option>
+<option value="Renigunta, India">Renigunta, India</option>
+<option value="Renukūt, India">Renukūt, India</option>
+<option value="Reoti, India">Reoti, India</option>
+<option value="Repalle, India">Repalle, India</option>
+<option value="Revelganj, India">Revelganj, India</option>
+<option value="Rewa, India">Rewa, India</option>
+<option value="Rewāri, India">Rewāri, India</option>
+<option value="Richha, India">Richha, India</option>
+<option value="Rīngas, India">Rīngas, India</option>
+<option value="Rishīkesh, India">Rishīkesh, India</option>
+<option value="Risod, India">Risod, India</option>
+<option value="Robertsganj, India">Robertsganj, India</option>
+<option value="Robertsonpet, India">Robertsonpet, India</option>
+<option value="Roha, India">Roha, India</option>
+<option value="Rohtak, India">Rohtak, India</option>
+<option value="Ron, India">Ron, India</option>
+<option value="Roorkee, India">Roorkee, India</option>
+<option value="Ropar, India">Ropar, India</option>
+<option value="Rūdarpur, India">Rūdarpur, India</option>
+<option value="Rura, India">Rura, India</option>
+<option value="Rusera, India">Rusera, India</option>
+<option value="Sabalgarh, India">Sabalgarh, India</option>
+<option value="Sadābād, India">Sadābād, India</option>
+<option value="Sadalgi, India">Sadalgi, India</option>
+<option value="Sadāseopet, India">Sadāseopet, India</option>
+<option value="Sādri, India">Sādri, India</option>
+<option value="Safidon, India">Safidon, India</option>
+<option value="Safīpur, India">Safīpur, India</option>
+<option value="Sāgar, India">Sāgar, India</option>
+<option value="Sagauli, India">Sagauli, India</option>
+<option value="Sahāranpur, India">Sahāranpur, India</option>
+<option value="Saharsa, India">Saharsa, India</option>
+<option value="Sahaspur, India">Sahaspur, India</option>
+<option value="Sahaswān, India">Sahaswān, India</option>
+<option value="Sahāwar, India">Sahāwar, India</option>
+<option value="Sāhibganj, India">Sāhibganj, India</option>
+<option value="Saidpur, India">Saidpur, India</option>
+<option value="Saiha, India">Saiha, India</option>
+<option value="Sainthia, India">Sainthia, India</option>
+<option value="Sakleshpur, India">Sakleshpur, India</option>
+<option value="Saktī, India">Saktī, India</option>
+<option value="Salāya, India">Salāya, India</option>
+<option value="Salem, India">Salem, India</option>
+<option value="Sālūmbar, India">Sālūmbar, India</option>
+<option value="Sālūr, India">Sālūr, India</option>
+<option value="Samālkha, India">Samālkha, India</option>
+<option value="Sāmalkot, India">Sāmalkot, India</option>
+<option value="Samāstipur, India">Samāstipur, India</option>
+<option value="Sāmba, India">Sāmba, India</option>
+<option value="Sambalpur, India">Sambalpur, India</option>
+<option value="Sambhal, India">Sambhal, India</option>
+<option value="Sāmbhar, India">Sāmbhar, India</option>
+<option value="Samdari, India">Samdari, India</option>
+<option value="Samrāla, India">Samrāla, India</option>
+<option value="Samthar, India">Samthar, India</option>
+<option value="Sānand, India">Sānand, India</option>
+<option value="Sanaur, India">Sanaur, India</option>
+<option value="Sanāwad, India">Sanāwad, India</option>
+<option value="Sānchor, India">Sānchor, India</option>
+<option value="Sancoale, India">Sancoale, India</option>
+<option value="Sāndi, India">Sāndi, India</option>
+<option value="Sandīla, India">Sandīla, India</option>
+<option value="Sandūr, India">Sandūr, India</option>
+<option value="Sangamner, India">Sangamner, India</option>
+<option value="Sangāreddi, India">Sangāreddi, India</option>
+<option value="Sangariā, India">Sangariā, India</option>
+<option value="Sāngli, India">Sāngli, India</option>
+<option value="Sangod, India">Sangod, India</option>
+<option value="Sāngola, India">Sāngola, India</option>
+<option value="Sangrūr, India">Sangrūr, India</option>
+<option value="Sankeshwar, India">Sankeshwar, India</option>
+<option value="Saoner, India">Saoner, India</option>
+<option value="Sarāi Ākil, India">Sarāi Ākil, India</option>
+<option value="Sarāi Mīr, India">Sarāi Mīr, India</option>
+<option value="Saraipali, India">Saraipali, India</option>
+<option value="Sārangpur, India">Sārangpur, India</option>
+<option value="Sarauli, India">Sarauli, India</option>
+<option value="Sardārshahr, India">Sardārshahr, India</option>
+<option value="Sardhana, India">Sardhana, India</option>
+<option value="Sardulgarh, India">Sardulgarh, India</option>
+<option value="Sarkhej, India">Sarkhej, India</option>
+<option value="Sarwār, India">Sarwār, India</option>
+<option value="Sāsvad, India">Sāsvad, India</option>
+<option value="Satānā, India">Satānā, India</option>
+<option value="Satara, India">Satara, India</option>
+<option value="Sathupalli, India">Sathupalli, India</option>
+<option value="Sathyamangalam, India">Sathyamangalam, India</option>
+<option value="Satna, India">Satna, India</option>
+<option value="Sattenapalle, India">Sattenapalle, India</option>
+<option value="Sattur, India">Sattur, India</option>
+<option value="Saugor, India">Saugor, India</option>
+<option value="Saundatti, India">Saundatti, India</option>
+<option value="Sausar, India">Sausar, India</option>
+<option value="Sāvantvādi, India">Sāvantvādi, India</option>
+<option value="Savanūr, India">Savanūr, India</option>
+<option value="Sāvda, India">Sāvda, India</option>
+<option value="Sawāi Mādhopur, India">Sawāi Mādhopur, India</option>
+<option value="Sāyla, India">Sāyla, India</option>
+<option value="Sehore, India">Sehore, India</option>
+<option value="Selu, India">Selu, India</option>
+<option value="Sendhwa, India">Sendhwa, India</option>
+<option value="Seohāra, India">Seohāra, India</option>
+<option value="Seondha, India">Seondha, India</option>
+<option value="Seoni, India">Seoni, India</option>
+<option value="Seoni Mālwa, India">Seoni Mālwa, India</option>
+<option value="Seram, India">Seram, India</option>
+<option value="Serchhīp, India">Serchhīp, India</option>
+<option value="Serilingampalle, India">Serilingampalle, India</option>
+<option value="Shāhābād, India">Shāhābād, India</option>
+<option value="Shāhāda, India">Shāhāda, India</option>
+<option value="Shahbazpur, India">Shahbazpur, India</option>
+<option value="Shahdol, India">Shahdol, India</option>
+<option value="Shāhganj, India">Shāhganj, India</option>
+<option value="Shāhi, India">Shāhi, India</option>
+<option value="Shāhjānpur, India">Shāhjānpur, India</option>
+<option value="Shāhpura, India">Shāhpura, India</option>
+<option value="Shāhpur, India">Shāhpur, India</option>
+<option value="Shājāpur, India">Shājāpur, India</option>
+<option value="Shāmgarh, India">Shāmgarh, India</option>
+<option value="Shāmli, India">Shāmli, India</option>
+<option value="Shamsābād, India">Shamsābād, India</option>
+<option value="Shāntipur, India">Shāntipur, India</option>
+<option value="Shegaon, India">Shegaon, India</option>
+<option value="Sheikhpura, India">Sheikhpura, India</option>
+<option value="Sheoganj, India">Sheoganj, India</option>
+<option value="Sheohar, India">Sheohar, India</option>
+<option value="Sheopur, India">Sheopur, India</option>
+<option value="Sherghāti, India">Sherghāti, India</option>
+<option value="Sherkot, India">Sherkot, India</option>
+<option value="Shertallai, India">Shertallai, India</option>
+<option value="Shiggaon, India">Shiggaon, India</option>
+<option value="Shikārpur, India">Shikārpur, India</option>
+<option value="Shikārpūr, India">Shikārpūr, India</option>
+<option value="Shikohābād, India">Shikohābād, India</option>
+<option value="Shiliguri, India">Shiliguri, India</option>
+<option value="Shillong, India">Shillong, India</option>
+<option value="Shimla, India">Shimla, India</option>
+<option value="Shimoga, India">Shimoga, India</option>
+<option value="Shiraguppi, India">Shiraguppi, India</option>
+<option value="Shirdi, India">Shirdi, India</option>
+<option value="Shirhatti, India">Shirhatti, India</option>
+<option value="Shirpur, India">Shirpur, India</option>
+<option value="Shīshgarh, India">Shīshgarh, India</option>
+<option value="Shivpuri, India">Shivpuri, India</option>
+<option value="Sholinghur, India">Sholinghur, India</option>
+<option value="Shōranūr, India">Shōranūr, India</option>
+<option value="Shorāpur, India">Shorāpur, India</option>
+<option value="Shrīgonda, India">Shrīgonda, India</option>
+<option value="Shrīrāmpur, India">Shrīrāmpur, India</option>
+<option value="Shrīrangapattana, India">Shrīrangapattana, India</option>
+<option value="Shujālpur, India">Shujālpur, India</option>
+<option value="Shyamnagar, India">Shyamnagar, India</option>
+<option value="Sibsāgar, India">Sibsāgar, India</option>
+<option value="Siddhapur, India">Siddhapur, India</option>
+<option value="Siddipet, India">Siddipet, India</option>
+<option value="Sidhaulī, India">Sidhaulī, India</option>
+<option value="Sidhi, India">Sidhi, India</option>
+<option value="Sidlaghatta, India">Sidlaghatta, India</option>
+<option value="Sihorā, India">Sihorā, India</option>
+<option value="Sihor, India">Sihor, India</option>
+<option value="Sijua, India">Sijua, India</option>
+<option value="Sikandarābād, India">Sikandarābād, India</option>
+<option value="Sikandarpur, India">Sikandarpur, India</option>
+<option value="Sikandra Rao, India">Sikandra Rao, India</option>
+<option value="Sīkar, India">Sīkar, India</option>
+<option value="Sikka, India">Sikka, India</option>
+<option value="Silao, India">Silao, India</option>
+<option value="Silapathar, India">Silapathar, India</option>
+<option value="Silchar, India">Silchar, India</option>
+<option value="Sillod, India">Sillod, India</option>
+<option value="Silvassa, India">Silvassa, India</option>
+<option value="Simdega, India">Simdega, India</option>
+<option value="Sindgi, India">Sindgi, India</option>
+<option value="Sindhnūr, India">Sindhnūr, India</option>
+<option value="Singānallūr, India">Singānallūr, India</option>
+<option value="Singāpur, India">Singāpur, India</option>
+<option value="Singarāyakonda, India">Singarāyakonda, India</option>
+<option value="Singrauli, India">Singrauli, India</option>
+<option value="Singur, India">Singur, India</option>
+<option value="Sinnar, India">Sinnar, India</option>
+<option value="Sīra, India">Sīra, India</option>
+<option value="Sirhind, India">Sirhind, India</option>
+<option value="Sīrkāzhi, India">Sīrkāzhi, India</option>
+<option value="Sirohi, India">Sirohi, India</option>
+<option value="Sironj, India">Sironj, India</option>
+<option value="Sirsāganj, India">Sirsāganj, India</option>
+<option value="Sirsa, India">Sirsa, India</option>
+<option value="Sirsi, India">Sirsi, India</option>
+<option value="Sirsilla, India">Sirsilla, India</option>
+<option value="Siruguppa, India">Siruguppa, India</option>
+<option value="Sirumugai, India">Sirumugai, India</option>
+<option value="Sirūr, India">Sirūr, India</option>
+<option value="Sisauli, India">Sisauli, India</option>
+<option value="Siswā Bāzār, India">Siswā Bāzār, India</option>
+<option value="Sītāmarhi, India">Sītāmarhi, India</option>
+<option value="Sītāpur, India">Sītāpur, India</option>
+<option value="Sitārganj, India">Sitārganj, India</option>
+<option value="Siuri, India">Siuri, India</option>
+<option value="Sivaganga, India">Sivaganga, India</option>
+<option value="Sivagiri, India">Sivagiri, India</option>
+<option value="Sivakasi, India">Sivakasi, India</option>
+<option value="Siwāna, India">Siwāna, India</option>
+<option value="Siwān, India">Siwān, India</option>
+<option value="Sohāgpur, India">Sohāgpur, India</option>
+<option value="Sohna, India">Sohna, India</option>
+<option value="Sojat, India">Sojat, India</option>
+<option value="Sojītra, India">Sojītra, India</option>
+<option value="Solan, India">Solan, India</option>
+<option value="Solāpur, India">Solāpur, India</option>
+<option value="Someshwar, India">Someshwar, India</option>
+<option value="Sompeta, India">Sompeta, India</option>
+<option value="Sonāmukhi, India">Sonāmukhi, India</option>
+<option value="Sonāri, India">Sonāri, India</option>
+<option value="Sonepur, India">Sonepur, India</option>
+<option value="Songadh, India">Songadh, India</option>
+<option value="Sonīpat, India">Sonīpat, India</option>
+<option value="Sopur, India">Sopur, India</option>
+<option value="Sorada, India">Sorada, India</option>
+<option value="Soro, India">Soro, India</option>
+<option value="Soron, India">Soron, India</option>
+<option value="Soygaon, India">Soygaon, India</option>
+<option value="Soyībug, India">Soyībug, India</option>
+<option value="Sri Dūngargarh, India">Sri Dūngargarh, India</option>
+<option value="Sri Mādhopur, India">Sri Mādhopur, India</option>
+<option value="Srinagar, India">Srinagar, India</option>
+<option value="Srīnagar, India">Srīnagar, India</option>
+<option value="Srīnivāspur, India">Srīnivāspur, India</option>
+<option value="Srīperumbūdūr, India">Srīperumbūdūr, India</option>
+<option value="Srīrāmnagar, India">Srīrāmnagar, India</option>
+<option value="Srirāmpur, India">Srirāmpur, India</option>
+<option value="Srīsailain, India">Srīsailain, India</option>
+<option value="Srivaikuntam, India">Srivaikuntam, India</option>
+<option value="Srīvardhan, India">Srīvardhan, India</option>
+<option value="Srivilliputhur, India">Srivilliputhur, India</option>
+<option value="Suār, India">Suār, India</option>
+<option value="Sūjāngarh, India">Sūjāngarh, India</option>
+<option value="Suket, India">Suket, India</option>
+<option value="Sultanpur, India">Sultanpur, India</option>
+<option value="Sultānpur, India">Sultānpur, India</option>
+<option value="Sulur, India">Sulur, India</option>
+<option value="Sūlūru, India">Sūlūru, India</option>
+<option value="Sulya, India">Sulya, India</option>
+<option value="Sunām, India">Sunām, India</option>
+<option value="Sundargarh, India">Sundargarh, India</option>
+<option value="Sundarnagar, India">Sundarnagar, India</option>
+<option value="Sunel, India">Sunel, India</option>
+<option value="Supaul, India">Supaul, India</option>
+<option value="Sūrajgarh, India">Sūrajgarh, India</option>
+<option value="Sūrandai, India">Sūrandai, India</option>
+<option value="Sūratgarh, India">Sūratgarh, India</option>
+<option value="Sūrat, India">Sūrat, India</option>
+<option value="Surendranagar, India">Surendranagar, India</option>
+<option value="Suriānwān, India">Suriānwān, India</option>
+<option value="Suriāpet, India">Suriāpet, India</option>
+<option value="Tādepallegūdem, India">Tādepallegūdem, India</option>
+<option value="Tādepalle, India">Tādepalle, India</option>
+<option value="Tādpatri, India">Tādpatri, India</option>
+<option value="Tājpur, India">Tājpur, India</option>
+<option value="Takhatgarh, India">Takhatgarh, India</option>
+<option value="Takhatpur, India">Takhatpur, India</option>
+<option value="Tāki, India">Tāki, India</option>
+<option value="Talāja, India">Talāja, India</option>
+<option value="Tālcher, India">Tālcher, India</option>
+<option value="Talegaon Dābhāde, India">Talegaon Dābhāde, India</option>
+<option value="Taleigao, India">Taleigao, India</option>
+<option value="Tālīkota, India">Tālīkota, India</option>
+<option value="Talipparamba, India">Talipparamba, India</option>
+<option value="Taloda, India">Taloda, India</option>
+<option value="Talwandi Bhai, India">Talwandi Bhai, India</option>
+<option value="Talwāra, India">Talwāra, India</option>
+<option value="Tambaram, India">Tambaram, India</option>
+<option value="Tamlūk, India">Tamlūk, India</option>
+<option value="Tanakpur, India">Tanakpur, India</option>
+<option value="Tānda, India">Tānda, India</option>
+<option value="Tāndā, India">Tāndā, India</option>
+<option value="Tāndūr, India">Tāndūr, India</option>
+<option value="Tanjore, India">Tanjore, India</option>
+<option value="Tanuku, India">Tanuku, India</option>
+<option value="Tāoru, India">Tāoru, India</option>
+<option value="Tarakeswar, India">Tarakeswar, India</option>
+<option value="Tāramangalam, India">Tāramangalam, India</option>
+<option value="Tārānagar, India">Tārānagar, India</option>
+<option value="Tarāna, India">Tarāna, India</option>
+<option value="Tarikere, India">Tarikere, India</option>
+<option value="Tarn Tāran, India">Tarn Tāran, India</option>
+<option value="Tāsgaon, India">Tāsgaon, India</option>
+<option value="Teghra, India">Teghra, India</option>
+<option value="Tehri, India">Tehri, India</option>
+<option value="Tekāri, India">Tekāri, India</option>
+<option value="Tekkalakote, India">Tekkalakote, India</option>
+<option value="Tekkali, India">Tekkali, India</option>
+<option value="Telhāra, India">Telhāra, India</option>
+<option value="Tellicherry, India">Tellicherry, India</option>
+<option value="Teni, India">Teni, India</option>
+<option value="Teonthar, India">Teonthar, India</option>
+<option value="Terdāl, India">Terdāl, India</option>
+<option value="Tezpur, India">Tezpur, India</option>
+<option value="Thakurdwara, India">Thakurdwara, India</option>
+<option value="Thākurganj, India">Thākurganj, India</option>
+<option value="Thāna Bhawan, India">Thāna Bhawan, India</option>
+<option value="Thānesar, India">Thānesar, India</option>
+<option value="Thān, India">Thān, India</option>
+<option value="Tharād, India">Tharād, India</option>
+<option value="Tharangambadi, India">Tharangambadi, India</option>
+<option value="Thāsra, India">Thāsra, India</option>
+<option value="Thenkasi, India">Thenkasi, India</option>
+<option value="Thiruthani, India">Thiruthani, India</option>
+<option value="Thiruvananthapuram, India">Thiruvananthapuram, India</option>
+<option value="Thiruvarur, India">Thiruvarur, India</option>
+<option value="Thoothukudi, India">Thoothukudi, India</option>
+<option value="Thoubāl, India">Thoubāl, India</option>
+<option value="Tijāra, India">Tijāra, India</option>
+<option value="Tīkamgarh, India">Tīkamgarh, India</option>
+<option value="Tilhar, India">Tilhar, India</option>
+<option value="Tindivanam, India">Tindivanam, India</option>
+<option value="Tinnanūr, India">Tinnanūr, India</option>
+<option value="Tinsukia, India">Tinsukia, India</option>
+<option value="Tiptūr, India">Tiptūr, India</option>
+<option value="Tīrthahalli, India">Tīrthahalli, India</option>
+<option value="Tiruchchendur, India">Tiruchchendur, India</option>
+<option value="Tiruchengode, India">Tiruchengode, India</option>
+<option value="Tiruchirappalli, India">Tiruchirappalli, India</option>
+<option value="Tirukkoyilur, India">Tirukkoyilur, India</option>
+<option value="Tirumala, India">Tirumala, India</option>
+<option value="Tirunelveli, India">Tirunelveli, India</option>
+<option value="Tirupati, India">Tirupati, India</option>
+<option value="Tirupparangunram, India">Tirupparangunram, India</option>
+<option value="Tiruppur, India">Tiruppur, India</option>
+<option value="Tiruppuvanam, India">Tiruppuvanam, India</option>
+<option value="Tirur, India">Tirur, India</option>
+<option value="Tiruttangal, India">Tiruttangal, India</option>
+<option value="Tiruvalla, India">Tiruvalla, India</option>
+<option value="Tiruvallur, India">Tiruvallur, India</option>
+<option value="Tiruvannāmalai, India">Tiruvannāmalai, India</option>
+<option value="Tisaiyanvilai, India">Tisaiyanvilai, India</option>
+<option value="Titlāgarh, India">Titlāgarh, India</option>
+<option value="Todabhim, India">Todabhim, India</option>
+<option value="Todaraisingh, India">Todaraisingh, India</option>
+<option value="Tohāna, India">Tohāna, India</option>
+<option value="Tondi, India">Tondi, India</option>
+<option value="Tonk, India">Tonk, India</option>
+<option value="Trichūr, India">Trichūr, India</option>
+<option value="Tuensang, India">Tuensang, India</option>
+<option value="Tufānganj, India">Tufānganj, India</option>
+<option value="Tuljāpur, India">Tuljāpur, India</option>
+<option value="Tulsīpur, India">Tulsīpur, India</option>
+<option value="Tumkūr, India">Tumkūr, India</option>
+<option value="Tumsar, India">Tumsar, India</option>
+<option value="Tūndla, India">Tūndla, India</option>
+<option value="Tuni, India">Tuni, India</option>
+<option value="Tura, India">Tura, India</option>
+<option value="Turaiyūr, India">Turaiyūr, India</option>
+<option value="Udaipura, India">Udaipura, India</option>
+<option value="Udaipur, India">Udaipur, India</option>
+<option value="Udalguri, India">Udalguri, India</option>
+<option value="Udangudi, India">Udangudi, India</option>
+<option value="Udgīr, India">Udgīr, India</option>
+<option value="Udhampur, India">Udhampur, India</option>
+<option value="Udipi, India">Udipi, India</option>
+<option value="Udumalaippettai, India">Udumalaippettai, India</option>
+<option value="Ujhāni, India">Ujhāni, India</option>
+<option value="Ujjain, India">Ujjain, India</option>
+<option value="Ulhasnagar, India">Ulhasnagar, India</option>
+<option value="Ullal, India">Ullal, India</option>
+<option value="Umarga, India">Umarga, India</option>
+<option value="Umaria, India">Umaria, India</option>
+<option value="Umarkhed, India">Umarkhed, India</option>
+<option value="Umarkot, India">Umarkot, India</option>
+<option value="Umred, India">Umred, India</option>
+<option value="Umreth, India">Umreth, India</option>
+<option value="Una, India">Una, India</option>
+<option value="Unhel, India">Unhel, India</option>
+<option value="Un, India">Un, India</option>
+<option value="Ūn, India">Ūn, India</option>
+<option value="Unjha, India">Unjha, India</option>
+<option value="Unnāo, India">Unnāo, India</option>
+<option value="Upleta, India">Upleta, India</option>
+<option value="Uran, India">Uran, India</option>
+<option value="Uravakonda, India">Uravakonda, India</option>
+<option value="Usehat, India">Usehat, India</option>
+<option value="Usilampatti, India">Usilampatti, India</option>
+<option value="Utraula, India">Utraula, India</option>
+<option value="Uttamapālaiyam, India">Uttamapālaiyam, India</option>
+<option value="Uttarkāshi, India">Uttarkāshi, India</option>
+<option value="Uttiramerūr, India">Uttiramerūr, India</option>
+<option value="Vāda, India">Vāda, India</option>
+<option value="Vadakku Valliyūr, India">Vadakku Valliyūr, India</option>
+<option value="Vadakku Viravanallur, India">Vadakku Viravanallur, India</option>
+<option value="Vadamadurai, India">Vadamadurai, India</option>
+<option value="Vadigenhalli, India">Vadigenhalli, India</option>
+<option value="Vādippatti, India">Vādippatti, India</option>
+<option value="Vadlapūdi, India">Vadlapūdi, India</option>
+<option value="Vadnagar, India">Vadnagar, India</option>
+<option value="Vadodara, India">Vadodara, India</option>
+<option value="Vaijāpur, India">Vaijāpur, India</option>
+<option value="Vaikam, India">Vaikam, India</option>
+<option value="Valabhīpur, India">Valabhīpur, India</option>
+<option value="Vallabh Vidyanagar, India">Vallabh Vidyanagar, India</option>
+<option value="Valparai, India">Valparai, India</option>
+<option value="Valsād, India">Valsād, India</option>
+<option value="Vandavāsi, India">Vandavāsi, India</option>
+<option value="Vaniyambadi, India">Vaniyambadi, India</option>
+<option value="Vapi, India">Vapi, India</option>
+<option value="Varanasi, India">Varanasi, India</option>
+<option value="Varangaon, India">Varangaon, India</option>
+<option value="Varkala, India">Varkala, India</option>
+<option value="Vasa, India">Vasa, India</option>
+<option value="Vāsco Da Gāma, India">Vāsco Da Gāma, India</option>
+<option value="Vasind, India">Vasind, India</option>
+<option value="Vāsudevanallūr, India">Vāsudevanallūr, India</option>
+<option value="Vattalkundu, India">Vattalkundu, India</option>
+<option value="Vayalār, India">Vayalār, India</option>
+<option value="Vedaraniyam, India">Vedaraniyam, India</option>
+<option value="Vejalpur, India">Vejalpur, India</option>
+<option value="Vellore, India">Vellore, India</option>
+<option value="Velur, India">Velur, India</option>
+<option value="Vemalwāda, India">Vemalwāda, India</option>
+<option value="Venkatagiri, India">Venkatagiri, India</option>
+<option value="Vepagunta, India">Vepagunta, India</option>
+<option value="Verāval, India">Verāval, India</option>
+<option value="Vetapālem, India">Vetapālem, India</option>
+<option value="Vettaikkaranpudur, India">Vettaikkaranpudur, India</option>
+<option value="Vettūr, India">Vettūr, India</option>
+<option value="Vidisha, India">Vidisha, India</option>
+<option value="Vijāpur, India">Vijāpur, India</option>
+<option value="Vijayawada, India">Vijayawada, India</option>
+<option value="Vikārābād, India">Vikārābād, India</option>
+<option value="Villupuram, India">Villupuram, India</option>
+<option value="Vinukonda, India">Vinukonda, India</option>
+<option value="Vīrarājendrapet, India">Vīrarājendrapet, India</option>
+<option value="Virār, India">Virār, India</option>
+<option value="Virudunagar, India">Virudunagar, India</option>
+<option value="Visakhapatnam, India">Visakhapatnam, India</option>
+<option value="Vīsāvadar, India">Vīsāvadar, India</option>
+<option value="Visnagar, India">Visnagar, India</option>
+<option value="Vite, India">Vite, India</option>
+<option value="Vizianagaram, India">Vizianagaram, India</option>
+<option value="Vriddhāchalam, India">Vriddhāchalam, India</option>
+<option value="Vrindāvan, India">Vrindāvan, India</option>
+<option value="V.S.K.Valasai (Dindigul-Dist.), India">V.S.K.Valasai (Dindigul-Dist.), India</option>
+<option value="Vuyyūru, India">Vuyyūru, India</option>
+<option value="Vyāra, India">Vyāra, India</option>
+<option value="Wādi, India">Wādi, India</option>
+<option value="Wai, India">Wai, India</option>
+<option value="Walajapet, India">Walajapet, India</option>
+<option value="Wani, India">Wani, India</option>
+<option value="Wānkāner, India">Wānkāner, India</option>
+<option value="Wanparti, India">Wanparti, India</option>
+<option value="Warangal, India">Warangal, India</option>
+<option value="Wārāseonī, India">Wārāseonī, India</option>
+<option value="Wardha, India">Wardha, India</option>
+<option value="Wāris Alīganj, India">Wāris Alīganj, India</option>
+<option value="Warora, India">Warora, India</option>
+<option value="Warud, India">Warud, India</option>
+<option value="Wāshīm, India">Wāshīm, India</option>
+<option value="Wazīrganj, India">Wazīrganj, India</option>
+<option value="Wellington, India">Wellington, India</option>
+<option value="Wer, India">Wer, India</option>
+<option value="Wokha, India">Wokha, India</option>
+<option value="Yādgīr, India">Yādgīr, India</option>
+<option value="Yamunānagar, India">Yamunānagar, India</option>
+<option value="Yanamalakuduru, India">Yanamalakuduru, India</option>
+<option value="Yanam, India">Yanam, India</option>
+<option value="Yāval, India">Yāval, India</option>
+<option value="Yavatmāl, India">Yavatmāl, India</option>
+<option value="Yellandu, India">Yellandu, India</option>
+<option value="Yellāpur, India">Yellāpur, India</option>
+<option value="Yeola, India">Yeola, India</option>
+<option value="Zahirābād, India">Zahirābād, India</option>
+<option value="Zaidpur, India">Zaidpur, India</option>
+<option value="Zamānia, India">Zamānia, India</option>
+<option value="Zira, India">Zira, India</option>
+<option value="Zunheboto, India">Zunheboto, India</option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="single_field">
+                                            <div class="reset_btn">
+                                                <button  class="boxed-btn3 w-100" type="submit">Search Jobs</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                        <!--
+                        <div class="range_wrap">
+                            <label for="amount">Price range:</label>
+                            <div id="slider-range"></div>
+                            <p>
+                                <input type="text" id="amount" readonly style="border:0; color:#7A838B; font-size: 14px; font-weight:400;">
+                            </p>
+                        </div>
+                   
+                        <div class="reset_btn">
+                            <button  class="boxed-btn3 w-100" type="submit">Reset</button>
+                        </div>
+                         -->
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="recent_joblist_wrap">
+                        <div class="recent_joblist white-bg ">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h4>Job Listing</h4>
+                                </div>
+                                <!--
+                                <div class="col-md-6">
+                                    <div class="serch_cat d-flex justify-content-end">
+                                        <select>
+                                            <option data-display="Most Recent">Most Recent</option>
+                                            <option value="1">Marketer</option>
+                                            <option value="2">Wordpress </option>
+                                            <option value="4">Designer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job_lists m-0">
+                        {% for message in messages %}
+                        <h3>{{message}} </h3>
+                        {% endfor %}
+
+                        {% for result in data %}
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="single_jobs white-bg d-flex justify-content-between">
+                                    <div class="jobs_left d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="{% static 'assets2/img/svg_icon/5.svg' %}" alt="">
+                                        </div>
+                                        <div class="jobs_conetent">
+                                            <a href="{{result.refs.landing_page}}" target="_blank"><h4>{{result.name}}</h4></a>
+                                            <div class="links_locat d-flex align-items-center">
+                                                <div class="location">
+                                                    <p> <i class="fa fa-building"></i> {{ result.company.name }}</p>
+                                                </div>
+                                                <div class="location">
+                                                    <p> <i class="fa fa-user"></i>{% with result.categories|first as first_cat %}{{ first_cat.name }}{% endwith %}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_right">
+                                        <div class="apply_now">
+                                          <!--  <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a> -->
+                                            <a href="http://{{context_dictionary.domain}}/job_details/{{result.id}}" class="boxed-btn3" target="_blank">Apply Now</a>
+                                        </div>
+                                        <div class="date">
+                                            <p>{% with result.levels|first as first_lev %}{{ first_lev.name }}{% endwith %}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        {% endfor %}  
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="pagination_wrap">
+                                    <ul>
+                                        <form action="browse_jobs" method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" id="job_category" name="job_category" value="{{context_dictionary.category}}">
+                                            <input type="hidden" id="exp_level" name="exp_level" value="{{context_dictionary.level}}">
+                                            <input type="hidden" id="location" name="location" value="{{context_dictionary.location}}">
+                                            <input type="hidden" id="current_page" name="current_page" value="{{context_dictionary.current_page}}">
+                                        {% if context_dictionary.current_page > 1 %}
+                             
+
+                                    <li><button  class="boxed-btn3 w-100" type="submit" style="border-radius: 50px;" name="prev" id="prev" value="prev"><i class="ti-angle-left"></i></button>
+                                    </li>
+
+                                    {% endif %}
+                                  
+                                    {% if context_dictionary.total_pages > context_dictionary.current_page  %}
+                                    
+                                    <li><button  class="boxed-btn3 w-100" type="submit" style="border-radius: 50px;" name="next" id="next" value="next"><i class="ti-angle-right"></i></button>
+                                    {% endif %}
+                                </form>
+                                       
+                                       
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job_listing_area_end  -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <p>
+                                ganesh@aceyourcareer.com<br>
+                                 +91 7624980362
+
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/groups/aceyourcareer/?ref=share"><i class="fa fa-facebook-f"></i></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="https://t.me/jobsinformations"><i class="fa fa-telegram"></i></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/channel/UCWmz1F0g1iY3DrprksCm1NQ"><i class="fa fa-youtube"></i></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/aceyourcareer_official/"><i class="fa fa-instagram"></i></a>
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <!--
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.1s" data-wow-delay=".4s">
+                            <h3 class="footer_title">
+                                Company
+                            </h3>
+                            <ul>
+                                <li><a href="#">About </a></li>
+                                <li><a href="#"> Pricing</a></li>
+                                <li><a href="#">Carrier Tips</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+
+                        </div>
+                    -->
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <!--
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
+                            <h3 class="footer_title">
+                                Category
+                            </h3>
+                            <ul>
+                                <li><a href="#">Design & Art</a></li>
+                                <li><a href="#">Engineering</a></li>
+                                <li><a href="#">Sales & Marketing</a></li>
+                                <li><a href="#">Finance</a></li>
+                            </ul>
+                        </div>
+                    -->
+                    </div>
+                
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
+                            <h3 class="footer_title">
+                                Subscribe
+                            </h3>
+                            <form action="subscribe_store" method="POST" class="newsletter_form" name="sub_form" id="sub_form">
+                                {% csrf_token %}
+                                <input type="email" name="subscribe_email" id="subscribe_email" placeholder="Enter your mail">
+                                <button type="submit" name="submit" id="submit">Subscribe</button>
+                            </form>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+
+    <!-- link that opens popup -->
+    <!-- JS here -->
+    <script src="{% static 'assets2/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'assets2/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'assets2/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets2/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets2/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets2/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets2/js/ajax-form.js' %}"></script>
+    <script src="{% static 'assets2/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets2/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets2/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets2/js/scrollIt.js' %}"></script>
+    <script src="{% static 'assets2/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'assets2/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets2/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets2/js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'assets2/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets2/js/plugins.js' %}"></script>
+    <script src="{% static 'assets2/js/gijgo.min.js' %}"></script>
+
+
+
+    <!--contact js-->
+    <script src="{% static 'assets2/js/contact.js' %}"></script>
+    <script src="{% static 'assets2/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets2/js/jquery.form.js' %}"></script>
+    <script src="{% static 'assets2/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets2/js/mail-script.js' %}"></script>
+
+
+    <script src="{% static 'assets2/js/main.js' %}"></script>
+
+
+	<script>
+        $( function() {
+            $( "#slider-range" ).slider({
+                range: true,
+                min: 0,
+                max: 24600,
+                values: [ 750, 24600 ],
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] +"/ Year" );
+                }
+            });
+            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+                " - $" + $( "#slider-range" ).slider( "values", 1 ) + "/ Year");
+        } );
+        </script>
+</body>
+
+</html>
